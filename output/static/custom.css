@@ -1,0 +1,10 @@
+.post-preview>.post-meta {
+    color: grey;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 0;
+    text-align: right;
+}
+p.post-comments {
+    font-size: 12px;
+}

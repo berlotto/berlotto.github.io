@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre - Python</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/python.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-01-23T00:19:00-03:00</updated><entry><title>Este é um post Inicial</title><link href="https://berlotto.github.io/post-inicial.html" rel="alternate"></link><published>2021-01-23T00:19:00-03:00</published><updated>2021-01-23T00:19:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-23:/post-inicial.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This is the content of my super blog post.&lt;/h1&gt;
+&lt;p&gt;Uma linha inicial para falar das coisas&lt;/p&gt;
+&lt;h2&gt;Um titulo secundário&lt;/h2&gt;
+&lt;p&gt;Eiusmod sit aute mollit cillum pariatur est. Eu sit deserunt laborum nulla. Ipsum consectetur labore nulla id magna ea adipisicing elit ullamco. Adipisicing veniam sunt do occaecat est consectetur elit ipsum enim nostrud. Exercitation ex duis velit aliqua elit eu ullamco.&lt;/p&gt;
+&lt;p&gt;Esse eiusmod incididunt culpa qui eu elit qui commodo cupidatat officia qui. Ipsum laborum dolor exercitation sunt nisi dolore aliqua nulla. Reprehenderit sint minim nulla in fugiat velit aliquip dolor ex commodo consequat. Labore irure aliqua consectetur cillum laborum aute sunt non laboris mollit.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eu do dolore laborum reprehenderit tempor.&lt;/li&gt;
+&lt;li&gt;Eu do dolore laborum reprehenderit tempor.&lt;/li&gt;
+&lt;li&gt;Eu do dolore laborum reprehenderit tempor.&lt;/li&gt;
+&lt;li&gt;Eu do dolore laborum reprehenderit tempor.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Python"></category><category term="pelican"></category><category term="publishing"></category></entry></feed>
