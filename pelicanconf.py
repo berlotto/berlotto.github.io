@@ -36,8 +36,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),)
+LINKS = (
+    ('Author profile', 'https://github.com/berlotto'),
+)
 
 # Social widget
 SOCIAL = (('twitter', 'https://twitter.com/sergioberlotto'),
@@ -47,7 +48,8 @@ SOCIAL = (('twitter', 'https://twitter.com/sergioberlotto'),
           ('telegram','https://t.me/sergioberlotto'))
 
 DEFAULT_PAGINATION = False
-# DISPLAY_PAGES_ON_MENU = True
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

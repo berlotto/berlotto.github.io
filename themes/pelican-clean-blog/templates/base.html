@@ -142,7 +142,11 @@
                             {% endfor %}
                         {% endif %}
                     {% endif %}
-                </ul>
+                    {% for l in LINKS %}
+                        <li{% if l == page %} class="active"{% endif %}>
+                            <a target="_blank" href="{{ l[1] }}">{{ l[0] }}</a></li>
+                    {% endfor %}
+        </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
