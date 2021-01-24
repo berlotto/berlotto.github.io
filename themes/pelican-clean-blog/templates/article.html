@@ -105,14 +105,14 @@
                         {% if article.headline %}
                             <h3 class="subheading">{{ article.headline }}</h3>
                         {% endif %}
-                        <span class="meta">Postado por
+                        <span class="meta">
+                            Criado {{ article.locale_date }} por
                             {% for author in article.authors %}
                                 <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
                             {% endfor %}
-                            , {{ article.locale_date }}
                         </span>
                         {% if article.modified %}
-                            <span class="meta">Updated on {{ article.locale_modified }}</span>
+                            <span class="meta">Atualizado em {{ article.locale_modified }}</span>
                         {% endif %}
                         {% import 'translations.html' as translations with context %}
                         {{ translations.translations_for(article) }}
