@@ -8,3 +8,13 @@
 p.post-comments {
     font-size: 12px;
 }
+
+.post-heading > h1, .post-heading > .meta {
+    text-shadow: 3px 3px #333;
+}
+
+article img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
