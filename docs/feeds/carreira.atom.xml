@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre - carreira</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/carreira.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-01-24T13:00:00-03:00</updated><entry><title>Quero iniciar a programar, por qual linguagem eu começo ?</title><link href="https://berlotto.github.io/iniciar-a-programar.html" rel="alternate"></link><published>2021-01-24T13:00:00-03:00</published><updated>2021-01-24T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-24:/iniciar-a-programar.html</id><summary type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre - carreira</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/carreira.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-01-24T16:42:00-03:00</updated><entry><title>Quero iniciar a programar, por qual linguagem eu começo ?</title><link href="https://berlotto.github.io/iniciar-a-programar.html" rel="alternate"></link><published>2021-01-24T13:00:00-03:00</published><updated>2021-01-24T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-24:/iniciar-a-programar.html</id><summary type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;
 &lt;p&gt;Bem, é uma questão muito difícil de se resolver assim de cara, não existem linguagens que sejam para iniciar a programar, não existem linguagens que sejam para perfis definidos de programadores, existem sim linguagens de programação para muitos fins e com focos e métodos de desenvolvimento diferenciados.&lt;/p&gt;
 &lt;p&gt;Vejamos, por exemplo&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Assembly&lt;/strong&gt;&lt;/p&gt;
@@ -21,4 +21,63 @@
 &lt;h2&gt;Quantas linguagens eu devo aprender ?&lt;/h2&gt;
 &lt;p&gt;Isto somente o tempo dirá… você pode programar porque gosta ou pode programar porque precisa, ou pode fazer os dois também. Deixe-se levar pelo mercado ou force-o a seguir o caminho que você gostaria. Eu já programei, em minha vida de dev, em umas 10,12 linguagens diferentes pelo menos, hoje em dia meu foco é Python, mas não somente Python, preciso saber também PHP, Javascript, ShellScript, HTML/CSS (mesmo não sendo exatamente linguagens), Ruby, e por aí vai… eu realmente gosto do que faço, escolhi Python e tento forçar o mercado a aceitar o que gosto, faço os projetos do jeito que gosto e que são aceitos pelo cliente, já passei da fase de deixar o mercado me ditar em que linguagem eu irei trabalhar.&lt;/p&gt;
 &lt;h2&gt;E por fim…&lt;/h2&gt;
-&lt;p&gt;Na real, você viu que não se tem uma ou outra linguagem que seja utilizada para você iniciar, você viu aqui que existem formas de se chegar a ela, cada pessoa, cada programador é diferente, cada mercado tem sua cartela de possibilidades. Teste as opções e escolha aquela que lhe deixa mais feliz ! Fora isto, no meio do caminho, troque se for necessário, não se prenda a paradigmas, a mercados e opiniões, invista em você como programador e seja um ótimo programador. O resto, vem como resultado.&lt;/p&gt;</content><category term="carreira"></category><category term="programar"></category><category term="iniciar"></category><category term="linguagem"></category></entry></feed>
+&lt;p&gt;Na real, você viu que não se tem uma ou outra linguagem que seja utilizada para você iniciar, você viu aqui que existem formas de se chegar a ela, cada pessoa, cada programador é diferente, cada mercado tem sua cartela de possibilidades. Teste as opções e escolha aquela que lhe deixa mais feliz ! Fora isto, no meio do caminho, troque se for necessário, não se prenda a paradigmas, a mercados e opiniões, invista em você como programador e seja um ótimo programador. O resto, vem como resultado.&lt;/p&gt;</content><category term="carreira"></category><category term="programar"></category><category term="iniciar"></category><category term="linguagem"></category></entry><entry><title>Mercado de desenvolvimento, porque aprender e como iniciar a programar</title><link href="https://berlotto.github.io/mercado-python-porque-como.html" rel="alternate"></link><published>2016-03-01T13:00:00-03:00</published><updated>2021-01-24T16:42:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2016-03-01:/mercado-python-porque-como.html</id><summary type="html">&lt;p&gt;O mercado de programação é um mercado muito dinâmico, é um mercado que  hoje você está em alta, e amanhã você já não está mais.&lt;/p&gt;</summary><content type="html">&lt;p&gt;O mercado de programação é um mercado muito dinâmico, é um mercado que  hoje você está em alta, e amanhã você já não está mais. E além disto, tem o troca troca de linguagens de programação, até então a “grande sacada” para entrar no mercado era programar em Java... até então !&lt;/p&gt;
+&lt;p&gt;Mas, programar java não é mais a melhorar coisa a fazer ? Eu, Sérgio Berlotto, em minha humilde opinião pessoal lhe digo: não. Java Ainda está no mercado, e vai continuar por muito tempo ainda no mercado, e digo isto tomando como exemplo outras linguagens mais antigas como Cobol por exemplo, existe uma séria de sistemas em cobol que tem que receber manutenção ainda, e com a quantidade de sistemas feitos em java acredito que ocorra a mesma coisa futuramente, o profissional Java vai trabalhar em manutenção somente. &lt;/p&gt;
+&lt;h3&gt;Tah, mas e qual é a grande sacada ?&lt;/h3&gt;
+&lt;p&gt;De novo, na minha humilde opinião é: &lt;/p&gt;
+&lt;p&gt;Programador precisa conhecer não mais uma linguagem, mas sim várias linguagens, pois os sistemas estão muito variados e muito diversificados em suas estruturas. O que você precisa saber mesmo é lógica, matemática, isto sim nunca pode faltar.&lt;/p&gt;
+&lt;p&gt;Syntaxe agente não tem mais que saber de cor, syntaxe está na documentação, bibliotecas também, a mesma coisa, tudo está documentado. Pois uma boa linguagem de programação tem tudo a seu respeito documentado e de fácil acesso ao desenvolvedor.&lt;/p&gt;
+&lt;h3&gt;E o mercado de Python ?&lt;/h3&gt;
+&lt;p&gt;Este vem crescendo cada vez mais. O Python já uma linguagem que ganhou o seu lugar no coração de muitas empresas, e empresas grandes como Google, Nasa, o Governo Fed. Brasileiro, entre outras, mas ainda o mercado local, o mercado daqui, aquele que me emprega e paga minhas contas, ainda não está muito visivel, mas aos poucos as vagas vem aparecendo. E quanto mais agente, nós programadores home-office utilizarmos o python e mostrar-mos o seu poder, mais esta linguagem vai estar disponível em vagas de emprego remuneradas.O Python ainda vai crescer muito quando entrar em definitivo nas escolas e faculdades.&lt;/p&gt;
+&lt;h3&gt;E porque Python ?&lt;/h3&gt;
+&lt;p&gt;Python é uma linguagem que foi pensada e desenhada com foco no programador. Python dá muitas liberdades ao programador, mas com bastante segurança. Além disto, é uma linguagem que roda em muitas plataformas, sendo possível fazer um script python compatível com qualquer sistema operacional. Imagina seu script Python controlando a sua geladeira ? Hã ? Que tal ? Isto é possível. &lt;/p&gt;
+&lt;p&gt;Com python conseguimos atingir praticamente todo e qualquer mercado de programação:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Websites&lt;/li&gt;
+&lt;li&gt;Rotinas de processamento&lt;/li&gt;
+&lt;li&gt;Mineração&lt;/li&gt;
+&lt;li&gt;Comunicação com periféricos&lt;/li&gt;
+&lt;li&gt;Controle de máquina&lt;/li&gt;
+&lt;li&gt;Servidor&lt;/li&gt;
+&lt;li&gt;Cliente&lt;/li&gt;
+&lt;li&gt;Desktop&lt;/li&gt;
+&lt;li&gt;Celular/Tablet&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A documentção do Python é uma das melhores. Ao meu ver muito organizada, e bem separada para fácil entendimento. Lá você encontra resposta para muitos dos seus percalços.
+Além disto, seja você programador de qualquer linguagem que seja, provavelmente não terá muito problema para iniciar no Python, porque python é uma linguagem multiparadigma, com ele você consegue criar programas em vários métodos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Orientado a objetos&lt;/li&gt;
+&lt;li&gt;Estruturada&lt;/li&gt;
+&lt;li&gt;Funcional&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Na verdade, isto que falei sobre python não é novo, é o que todos sabem, é o que todos falam sobre Python. Você vai ver mesmo é no seu dia a dia programando Python o porque de trabalhar com esta linguagem. &lt;/p&gt;
+&lt;p&gt;Programar python é algo que te deixa feliz, é algo que te faz entender mais os problemas mesmo do que programá-los. Programar python é quenem ter um filho pequeno e vè-lo crescer, a cada dia tem uma palavra nova, uma ação diferente e sempre tem algo a para te alegrar ! Isto é Python, para mim é uma qualidade de vida !&lt;/p&gt;
+&lt;p&gt;Ok, agora, como começar a programar Python ?&lt;/p&gt;
+&lt;p&gt;Vamos fazer um hello world ?&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="err"&gt;!”&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Agora salve como &lt;code&gt;hello.py&lt;/code&gt; e rode no terminal de comando:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ python hello.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h3&gt;Gostou ?&lt;/h3&gt;
+&lt;p&gt;Então amigo, python não é só isto, python é muito mais que isto, e para você iniciar a programar python, lhe indico dois pontos de partida:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Livro &lt;strong&gt;Python para Desenvolvedores&lt;/strong&gt; – É um livro, criado por Luiz. E. Borges, com licença Creative Commons, que lhe ensina Python somente, sem lhe ensinar a programar, é voltado para quem já é desenvolvedor de software e quer aprender a linguagem somente.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href="http://ark4n.wordpress.com/python/"&gt;http://ark4n.wordpress.com/python/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Livro &lt;strong&gt;Aprenda Computação com Python&lt;/strong&gt; – É um trabalho comunitário de tradução do livro “How to Think Like a Computer Scientist: Learning with Python", de Allen Downey, Jeffrey Elkner e Chris Meyers, e é voltado para você que quer aprender a programar também, quer aprender mais sobre lógica.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href="https://aprendendo-computacao-com-python.readthedocs.io/en/latest/"&gt;https://aprendendo-computacao-com-python.readthedocs.io/en/latest/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;E de resto, leia bastamte, converse sobre Python com seus colegas, vá a eventos sobre Python, veja palestrar, acompanhe as postagens e seja feliz programando com Python!&lt;/p&gt;</content><category term="carreira"></category><category term="mercado"></category><category term="carreira"></category><category term="python"></category></entry></feed>
