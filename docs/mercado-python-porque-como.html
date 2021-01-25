@@ -1,266 +1,429 @@
 <!DOCTYPE html>
 <html lang="pt_br">
-
-<head>
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-        <title>Mercado de desenvolvimento, porque aprender e como iniciar a programar</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="./theme/css/clean-blog.min.css" rel="stylesheet">
-
-        <!-- Code highlight color scheme -->
-            <link href="./theme/css/code_blocks/darkly.css" rel="stylesheet">
-
-            <!-- CSS specified by the user -->
-            <link href="./static/custom.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Mercado de desenvolvimento, porque aprender e como iniciar a programar
+  </title>
+  <!-- Bootstrap Core CSS -->
+  <link href="./theme/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="./theme/css/clean-blog.min.css" rel="stylesheet"/>
+  <!-- Code highlight color scheme -->
+  <link href="./theme/css/code_blocks/darkly.css" rel="stylesheet"/>
+  <!-- CSS specified by the user -->
+  <link href="./static/custom.css" rel="stylesheet"/>
+  <!-- Custom Fonts -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-
-
-        <meta name="description" content="O que importa de verdade no mercado ?">
-
-        <meta name="author" content="Sérgio Berlotto">
-
-        <meta name="tags" content="mercado">
-        <meta name="tags" content="carreira">
-        <meta name="tags" content="python">
-
-	                <meta property="og:locale" content="">
-		<meta property="og:site_name" content="Programador Livre">
-
-	<meta property="og:type" content="article">
-            <meta property="article:author" content="./author/sergio-berlotto.html">
-	<meta property="og:url" content="./mercado-python-porque-como.html">
-	<meta property="og:title" content="Mercado de desenvolvimento, porque aprender e como iniciar a programar">
-	<meta property="article:published_time" content="2016-03-01 13:00:00-03:00">
-            <meta property="og:description" content="O que importa de verdade no mercado ?">
-
-            <meta property="og:image" content=".static/posts/integration.jpg">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@sergioberlotto">
-        <meta name="twitter:title" content="Mercado de desenvolvimento, porque aprender e como iniciar a programar">
-
-            <meta name="twitter:image" content=".static/posts/integration.jpg">
-
-            <meta name="twitter:description" content="O que importa de verdade no mercado ?">
-</head>
-
-<body class="article-mercado-python-porque-como">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./">Programador Livre</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="./pages/sobre.html">Quem sou eu</a></li>
-                        <li>
-                            <a target="_blank" href="https://github.com/berlotto">Author profile</a></li>
-        </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('./static/posts/integration.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Mercado de desenvolvimento, porque aprender e como iniciar a programar</h1>
-                            <h3 class="subheading">O que importa de verdade no mercado ?</h3>
-                        <span class="meta">
-                            Criado ter 01 março 2016 por
-                                <a href="./author/sergio-berlotto.html">Sérgio Berlotto</a>
-                        </span>
-                            <span class="meta">Atualizado em dom 24 janeiro 2021</span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <!-- Post Content -->
-    <article>
-        <p>O mercado de programação é um mercado muito dinâmico, é um mercado que  hoje você está em alta, e amanhã você já não está mais. E além disto, tem o troca troca de linguagens de programação, até então a “grande sacada” para entrar no mercado era programar em Java... até então !</p>
-<p>Mas, programar java não é mais a melhorar coisa a fazer ? Eu, Sérgio Berlotto, em minha humilde opinião pessoal lhe digo: não. Java Ainda está no mercado, e vai continuar por muito tempo ainda no mercado, e digo isto tomando como exemplo outras linguagens mais antigas como Cobol por exemplo, existe uma séria de sistemas em cobol que tem que receber manutenção ainda, e com a quantidade de sistemas feitos em java acredito que ocorra a mesma coisa futuramente, o profissional Java vai trabalhar em manutenção somente. </p>
-<h3>Tah, mas e qual é a grande sacada ?</h3>
-<p>De novo, na minha humilde opinião é: </p>
-<p>Programador precisa conhecer não mais uma linguagem, mas sim várias linguagens, pois os sistemas estão muito variados e muito diversificados em suas estruturas. O que você precisa saber mesmo é lógica, matemática, isto sim nunca pode faltar.</p>
-<p>Syntaxe agente não tem mais que saber de cor, syntaxe está na documentação, bibliotecas também, a mesma coisa, tudo está documentado. Pois uma boa linguagem de programação tem tudo a seu respeito documentado e de fácil acesso ao desenvolvedor.</p>
-<h3>E o mercado de Python ?</h3>
-<p>Este vem crescendo cada vez mais. O Python já uma linguagem que ganhou o seu lugar no coração de muitas empresas, e empresas grandes como Google, Nasa, o Governo Fed. Brasileiro, entre outras, mas ainda o mercado local, o mercado daqui, aquele que me emprega e paga minhas contas, ainda não está muito visivel, mas aos poucos as vagas vem aparecendo. E quanto mais agente, nós programadores home-office utilizarmos o python e mostrar-mos o seu poder, mais esta linguagem vai estar disponível em vagas de emprego remuneradas.O Python ainda vai crescer muito quando entrar em definitivo nas escolas e faculdades.</p>
-<h3>E porque Python ?</h3>
-<p>Python é uma linguagem que foi pensada e desenhada com foco no programador. Python dá muitas liberdades ao programador, mas com bastante segurança. Além disto, é uma linguagem que roda em muitas plataformas, sendo possível fazer um script python compatível com qualquer sistema operacional. Imagina seu script Python controlando a sua geladeira ? Hã ? Que tal ? Isto é possível. </p>
-<p>Com python conseguimos atingir praticamente todo e qualquer mercado de programação:</p>
-<ul>
-<li>Websites</li>
-<li>Rotinas de processamento</li>
-<li>Mineração</li>
-<li>Comunicação com periféricos</li>
-<li>Controle de máquina</li>
-<li>Servidor</li>
-<li>Cliente</li>
-<li>Desktop</li>
-<li>Celular/Tablet</li>
-<li>…</li>
-</ul>
-<p>A documentção do Python é uma das melhores. Ao meu ver muito organizada, e bem separada para fácil entendimento. Lá você encontra resposta para muitos dos seus percalços.
-Além disto, seja você programador de qualquer linguagem que seja, provavelmente não terá muito problema para iniciar no Python, porque python é uma linguagem multiparadigma, com ele você consegue criar programas em vários métodos:</p>
-<ul>
-<li>Orientado a objetos</li>
-<li>Estruturada</li>
-<li>Funcional</li>
-</ul>
-<p>Na verdade, isto que falei sobre python não é novo, é o que todos sabem, é o que todos falam sobre Python. Você vai ver mesmo é no seu dia a dia programando Python o porque de trabalhar com esta linguagem. </p>
-<p>Programar python é algo que te deixa feliz, é algo que te faz entender mais os problemas mesmo do que programá-los. Programar python é quenem ter um filho pequeno e vè-lo crescer, a cada dia tem uma palavra nova, uma ação diferente e sempre tem algo a para te alegrar ! Isto é Python, para mim é uma qualidade de vida !</p>
-<p>Ok, agora, como começar a programar Python ?</p>
-<p>Vamos fazer um hello world ?</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">!”</span>
-</code></pre></div>
-</td></tr></table>
-
-<p>Agora salve como <code>hello.py</code> e rode no terminal de comando:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python hello.py
-</code></pre></div>
-</td></tr></table>
-
-<h3>Gostou ?</h3>
-<p>Então amigo, python não é só isto, python é muito mais que isto, e para você iniciar a programar python, lhe indico dois pontos de partida:</p>
-<ul>
-<li>
-<p>Livro <strong>Python para Desenvolvedores</strong> – É um livro, criado por Luiz. E. Borges, com licença Creative Commons, que lhe ensina Python somente, sem lhe ensinar a programar, é voltado para quem já é desenvolvedor de software e quer aprender a linguagem somente.</p>
-<ul>
-<li>Link: <a href="http://ark4n.wordpress.com/python/">http://ark4n.wordpress.com/python/</a></li>
-</ul>
-</li>
-<li>
-<p>Livro <strong>Aprenda Computação com Python</strong> – É um trabalho comunitário de tradução do livro “How to Think Like a Computer Scientist: Learning with Python", de Allen Downey, Jeffrey Elkner e Chris Meyers, e é voltado para você que quer aprender a programar também, quer aprender mais sobre lógica.</p>
-<ul>
-<li>Link: <a href="https://aprendendo-computacao-com-python.readthedocs.io/en/latest/">https://aprendendo-computacao-com-python.readthedocs.io/en/latest/</a></li>
-</ul>
-</li>
-</ul>
-<p>E de resto, leia bastamte, converse sobre Python com seus colegas, vá a eventos sobre Python, veja palestrar, acompanhe as postagens e seja feliz programando com Python!</p>
-    </article>
-
-        <div class="tags">
-            <p>tags: <a href="./tag/mercado.html">mercado</a>, <a href="./tag/carreira.html">carreira</a>, <a href="./tag/python.html">python</a></p>
-        </div>
-
-    <hr>
-
-            </div>
-        </div>
+  <meta content="O que importa de verdade no mercado ?" name="description"/>
+  <meta content="Sérgio Berlotto" name="author"/>
+  <meta content="mercado" name="tags"/>
+  <meta content="carreira" name="tags"/>
+  <meta content="python" name="tags"/>
+  <meta content="" property="og:locale"/>
+  <meta content="Programador Livre" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="./author/sergio-berlotto.html" property="article:author"/>
+  <meta content="./mercado-python-porque-como.html" property="og:url"/>
+  <meta content="Mercado de desenvolvimento, porque aprender e como iniciar a programar" property="og:title"/>
+  <meta content="2016-03-01 13:00:00-03:00" property="article:published_time"/>
+  <meta content="O que importa de verdade no mercado ?" property="og:description"/>
+  <meta content=".static/posts/integration.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@sergioberlotto" name="twitter:site"/>
+  <meta content="Mercado de desenvolvimento, porque aprender e como iniciar a programar" name="twitter:title"/>
+  <meta content=".static/posts/integration.jpg" name="twitter:image"/>
+  <meta content="O que importa de verdade no mercado ?" name="twitter:description"/>
+  <link href="https://berlotto.github.io/mercado-python-porque-como.html" rel="canonical"/>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Mercado python porque como", "item": "https://berlotto.github.io/mercado-python-porque-como.html"}]}
+  </script>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Mercado de desenvolvimento, porque aprender e como iniciar a programar", "about": "carreira", "datePublished": "2016-03-01 13:00"}
+  </script>
+ </head>
+ <body class="article-mercado-python-porque-como">
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+     <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+      <span class="sr-only">
+       Toggle navigation
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+     </button>
+     <a class="navbar-brand" href="./">
+      Programador Livre
+     </a>
     </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <li>
+       <a href="./pages/sobre.html">
+        Quem sou eu
+       </a>
+      </li>
+      <li>
+       <a href="https://github.com/berlotto" target="_blank">
+        Author profile
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container -->
+  </nav>
+  <!-- Page Header -->
+  <header class="intro-header" style="background-image: url('./static/posts/integration.jpg')">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-heading">
+       <h1>
+        Mercado de desenvolvimento, porque aprender e como iniciar a programar
+       </h1>
+       <h3 class="subheading">
+        O que importa de verdade no mercado ?
+       </h3>
+       <span class="meta">
+        Criado ter 01 março 2016 por
+        <a href="./author/sergio-berlotto.html">
+         Sérgio Berlotto
+        </a>
+       </span>
+       <span class="meta">
+        Atualizado em dom 24 janeiro 2021
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+     <!-- Post Content -->
+     <article>
+      <p>
+       O mercado de programação é um mercado muito dinâmico, é um mercado que  hoje você está em alta, e amanhã você já não está mais. E além disto, tem o troca troca de linguagens de programação, até então a “grande sacada” para entrar no mercado era programar em Java... até então !
+      </p>
+      <p>
+       Mas, programar java não é mais a melhorar coisa a fazer ? Eu, Sérgio Berlotto, em minha humilde opinião pessoal lhe digo: não. Java Ainda está no mercado, e vai continuar por muito tempo ainda no mercado, e digo isto tomando como exemplo outras linguagens mais antigas como Cobol por exemplo, existe uma séria de sistemas em cobol que tem que receber manutenção ainda, e com a quantidade de sistemas feitos em java acredito que ocorra a mesma coisa futuramente, o profissional Java vai trabalhar em manutenção somente.
+      </p>
+      <h3>
+       Tah, mas e qual é a grande sacada ?
+      </h3>
+      <p>
+       De novo, na minha humilde opinião é:
+      </p>
+      <p>
+       Programador precisa conhecer não mais uma linguagem, mas sim várias linguagens, pois os sistemas estão muito variados e muito diversificados em suas estruturas. O que você precisa saber mesmo é lógica, matemática, isto sim nunca pode faltar.
+      </p>
+      <p>
+       Syntaxe agente não tem mais que saber de cor, syntaxe está na documentação, bibliotecas também, a mesma coisa, tudo está documentado. Pois uma boa linguagem de programação tem tudo a seu respeito documentado e de fácil acesso ao desenvolvedor.
+      </p>
+      <h3>
+       E o mercado de Python ?
+      </h3>
+      <p>
+       Este vem crescendo cada vez mais. O Python já uma linguagem que ganhou o seu lugar no coração de muitas empresas, e empresas grandes como Google, Nasa, o Governo Fed. Brasileiro, entre outras, mas ainda o mercado local, o mercado daqui, aquele que me emprega e paga minhas contas, ainda não está muito visivel, mas aos poucos as vagas vem aparecendo. E quanto mais agente, nós programadores home-office utilizarmos o python e mostrar-mos o seu poder, mais esta linguagem vai estar disponível em vagas de emprego remuneradas.O Python ainda vai crescer muito quando entrar em definitivo nas escolas e faculdades.
+      </p>
+      <h3>
+       E porque Python ?
+      </h3>
+      <p>
+       Python é uma linguagem que foi pensada e desenhada com foco no programador. Python dá muitas liberdades ao programador, mas com bastante segurança. Além disto, é uma linguagem que roda em muitas plataformas, sendo possível fazer um script python compatível com qualquer sistema operacional. Imagina seu script Python controlando a sua geladeira ? Hã ? Que tal ? Isto é possível.
+      </p>
+      <p>
+       Com python conseguimos atingir praticamente todo e qualquer mercado de programação:
+      </p>
+      <ul>
+       <li>
+        Websites
+       </li>
+       <li>
+        Rotinas de processamento
+       </li>
+       <li>
+        Mineração
+       </li>
+       <li>
+        Comunicação com periféricos
+       </li>
+       <li>
+        Controle de máquina
+       </li>
+       <li>
+        Servidor
+       </li>
+       <li>
+        Cliente
+       </li>
+       <li>
+        Desktop
+       </li>
+       <li>
+        Celular/Tablet
+       </li>
+       <li>
+        …
+       </li>
+      </ul>
+      <p>
+       A documentção do Python é uma das melhores. Ao meu ver muito organizada, e bem separada para fácil entendimento. Lá você encontra resposta para muitos dos seus percalços.
+Além disto, seja você programador de qualquer linguagem que seja, provavelmente não terá muito problema para iniciar no Python, porque python é uma linguagem multiparadigma, com ele você consegue criar programas em vários métodos:
+      </p>
+      <ul>
+       <li>
+        Orientado a objetos
+       </li>
+       <li>
+        Estruturada
+       </li>
+       <li>
+        Funcional
+       </li>
+      </ul>
+      <p>
+       Na verdade, isto que falei sobre python não é novo, é o que todos sabem, é o que todos falam sobre Python. Você vai ver mesmo é no seu dia a dia programando Python o porque de trabalhar com esta linguagem.
+      </p>
+      <p>
+       Programar python é algo que te deixa feliz, é algo que te faz entender mais os problemas mesmo do que programá-los. Programar python é quenem ter um filho pequeno e vè-lo crescer, a cada dia tem uma palavra nova, uma ação diferente e sempre tem algo a para te alegrar ! Isto é Python, para mim é uma qualidade de vida !
+      </p>
+      <p>
+       Ok, agora, como começar a programar Python ?
+      </p>
+      <p>
+       Vamos fazer um hello world ?
+      </p>
+      <table class="highlighttable">
+       <tr>
+        <td class="linenos">
+         <div class="linenodiv">
+          <pre>1</pre>
+         </div>
+        </td>
+        <td class="code">
+         <div class="highlight">
+          <pre><span></span><code><span class="nb">print</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">!”</span>
+</code></pre>
+         </div>
+        </td>
+       </tr>
+      </table>
+      <p>
+       Agora salve como
+       <code>
+        hello.py
+       </code>
+       e rode no terminal de comando:
+      </p>
+      <table class="highlighttable">
+       <tr>
+        <td class="linenos">
+         <div class="linenodiv">
+          <pre>1</pre>
+         </div>
+        </td>
+        <td class="code">
+         <div class="highlight">
+          <pre><span></span><code>$ python hello.py
+</code></pre>
+         </div>
+        </td>
+       </tr>
+      </table>
+      <h3>
+       Gostou ?
+      </h3>
+      <p>
+       Então amigo, python não é só isto, python é muito mais que isto, e para você iniciar a programar python, lhe indico dois pontos de partida:
+      </p>
+      <ul>
+       <li>
+        <p>
+         Livro
+         <strong>
+          Python para Desenvolvedores
+         </strong>
+         – É um livro, criado por Luiz. E. Borges, com licença Creative Commons, que lhe ensina Python somente, sem lhe ensinar a programar, é voltado para quem já é desenvolvedor de software e quer aprender a linguagem somente.
+        </p>
+        <ul>
+         <li>
+          Link:
+          <a href="http://ark4n.wordpress.com/python/">
+           http://ark4n.wordpress.com/python/
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <p>
+         Livro
+         <strong>
+          Aprenda Computação com Python
+         </strong>
+         – É um trabalho comunitário de tradução do livro “How to Think Like a Computer Scientist: Learning with Python", de Allen Downey, Jeffrey Elkner e Chris Meyers, e é voltado para você que quer aprender a programar também, quer aprender mais sobre lógica.
+        </p>
+        <ul>
+         <li>
+          Link:
+          <a href="https://aprendendo-computacao-com-python.readthedocs.io/en/latest/">
+           https://aprendendo-computacao-com-python.readthedocs.io/en/latest/
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <p>
+       E de resto, leia bastamte, converse sobre Python com seus colegas, vá a eventos sobre Python, veja palestrar, acompanhe as postagens e seja feliz programando com Python!
+      </p>
+     </article>
+     <div class="tags">
+      <p>
+       tags:
+       <a href="./tag/mercado.html">
+        mercado
+       </a>
+       ,
+       <a href="./tag/carreira.html">
+        carreira
+       </a>
+       ,
+       <a href="./tag/python.html">
+        python
+       </a>
+      </p>
+     </div>
+     <hr/>
+    </div>
+   </div>
+  </div>
+  <hr/>
+  <!-- Footer -->
+  <footer>
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <ul class="list-inline text-center">
+       <li>
+        <a href="https://twitter.com/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-github fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://facebook.com/sergio.berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.linkedin.com/in/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-linkedin fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-telegram fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+      </ul>
+      <p class="copyright text-muted">
+       Blog criado com
+       <a href="http://getpelican.com">
+        Pelican
+       </a>
+       ,
+    and
+       <a href="http://python.org">
+        Python
+       </a>
+       .
+       <br/>
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        <img alt="Creative Commons License" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" style="border-width:0"/>
+       </a>
+       "
+       <span property="dct:title" xmlns:dct="http://purl.org/dc/terms/">
+        Programador Livre
+       </span>
+       " by
+       <a href="." property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+        Sérgio Berlotto
+       </a>
+       is
+  licensed under a
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+       </a>
+       , except where indicated otherwise.
 
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                            <li>
-                                <a href="https://twitter.com/sergioberlotto">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/berlotto">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://facebook.com/sergio.berlotto">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/sergioberlotto">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://t.me/sergioberlotto">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                    </ul>
-<p class="copyright text-muted">
-    Blog criado com <a href="http://getpelican.com">Pelican</a>,
-    and <a href="http://python.org">Python</a>. <br />          <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Programador Livre</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="." property="cc:attributionName" rel="cc:attributionURL">Sérgio Berlotto</a> is
-  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>, except where indicated otherwise.
-
-    Todas imagens são do site <a href="http://pixabay.com" target="_blank">pixabay.com</a>
-</p>                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="./theme/js/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./theme/js/bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="./theme/js/clean-blog.min.js"></script>
-
-</body>
-
+    Todas imagens são do site
+       <a href="http://pixabay.com" target="_blank">
+        pixabay.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- jQuery -->
+  <script src="./theme/js/jquery.min.js">
+  </script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="./theme/js/bootstrap.min.js">
+  </script>
+  <!-- Custom Theme JavaScript -->
+  <script src="./theme/js/clean-blog.min.js">
+  </script>
+ </body>
 </html>

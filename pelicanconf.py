@@ -3,7 +3,7 @@
 
 AUTHOR = 'Sérgio Berlotto'
 SITENAME = 'Programador Livre'
-SITEURL = ''
+SITEURL = 'https://berlotto.github.io'
 
 PATH = 'content'
 
@@ -54,3 +54,8 @@ DISPLAY_CATEGORIES_ON_MENU = False
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 OUTPUT_PATH = 'docs/'
+
+# https://github.com/pelican-plugins/seo
+SEO_REPORT = True 
+SEO_ENHANCER = True
+SEO_ENHANCER_OPEN_GRAPH = True
