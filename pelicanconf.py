@@ -3,7 +3,7 @@
 
 AUTHOR = 'Sérgio Berlotto'
 SITENAME = 'Programador Livre'
-SITEURL = 'https://berlotto.github.io'
+SITEURL = ''
 
 PATH = 'content'
 
