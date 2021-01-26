@@ -5,16 +5,16 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Quem sou eu
+   Primeiras impressoes do Windows WSL
   </title>
   <!-- Bootstrap Core CSS -->
-  <link href="../theme/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="./theme/css/bootstrap.min.css" rel="stylesheet"/>
   <!-- Custom CSS -->
-  <link href="../theme/css/clean-blog.min.css" rel="stylesheet"/>
+  <link href="./theme/css/clean-blog.min.css" rel="stylesheet"/>
   <!-- Code highlight color scheme -->
-  <link href="../theme/css/code_blocks/darkly.css" rel="stylesheet"/>
+  <link href="./theme/css/code_blocks/darkly.css" rel="stylesheet"/>
   <!-- CSS specified by the user -->
-  <link href="../static/custom.css" rel="stylesheet"/>
+  <link href="./static/custom.css" rel="stylesheet"/>
   <!-- Custom Fonts -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
@@ -25,19 +25,37 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+  <meta content="Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o instalei num notebook para..." name="description"/>
+  <meta content="Sérgio Berlotto" name="author"/>
+  <meta content="windows" name="tags"/>
+  <meta content="linux" name="tags"/>
+  <meta content="wsl" name="tags"/>
+  <meta content="ubuntu" name="tags"/>
+  <meta content="integracao" name="tags"/>
+  <meta content="code" name="tags"/>
   <meta content="" property="og:locale"/>
   <meta content="Programador Livre" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="./author/sergio-berlotto.html" property="article:author"/>
+  <meta content="./windows-wsl-primeiras-impressoes.html" property="og:url"/>
+  <meta content="Primeiras impressoes do Windows WSL" property="og:title"/>
+  <meta content="2021-01-25 13:00:00-03:00" property="article:published_time"/>
+  <meta content="Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o instalei num notebook para..." property="og:description"/>
+  <meta content="./static/homecover.jpg" property="og:image"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="@sergioberlotto" name="twitter:site"/>
-  <meta content="Programador Livre" name="twitter:title"/>
-  <meta content="View the blog." name="twitter:description"/>
-  <meta content="../static/homecover.jpg" name="twitter:image"/>
-  <link href="https://berlotto.github.io/pages/sobre.html" rel="canonical"/>
+  <meta content="Primeiras impressoes do Windows WSL" name="twitter:title"/>
+  <meta content="./static/homecover.jpg" name="twitter:image"/>
+  <meta content="Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o instalei num notebook para..." name="twitter:description"/>
+  <link href="https://berlotto.github.io/windows-wsl-primeiras-impressoes.html" rel="canonical"/>
   <script type="application/ld+json">
-   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Pages", "item": "https://berlotto.github.io/pages"}, {"@type": "ListItem", "position": 3, "name": "Sobre", "item": "https://berlotto.github.io/pages/sobre.html"}]}
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Windows wsl primeiras impressoes", "item": "https://berlotto.github.io/windows-wsl-primeiras-impressoes.html"}]}
+  </script>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Primeiras impressoes do Windows WSL", "about": "windows", "datePublished": "2021-01-25 13:00"}
   </script>
  </head>
- <body class="page-sobre">
+ <body class="article-windows-wsl-primeiras-impressoes">
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
    <div class="container-fluid">
@@ -54,15 +72,15 @@
       <span class="icon-bar">
       </span>
      </button>
-     <a class="navbar-brand" href="../">
+     <a class="navbar-brand" href="./">
       Programador Livre
      </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav navbar-right">
-      <li class="active">
-       <a href="../pages/sobre.html">
+      <li>
+       <a href="./pages/sobre.html">
         Quem sou eu
        </a>
       </li>
@@ -78,14 +96,20 @@
    <!-- /.container -->
   </nav>
   <!-- Page Header -->
-  <header class="intro-header" style="background-image: url('../static/homecover.jpg')">
+  <header class="intro-header" style="background-image: url('./static/homecover.jpg')">
    <div class="container">
     <div class="row">
      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-heading">
        <h1>
-        Quem sou eu
+        Primeiras impressoes do Windows WSL
        </h1>
+       <span class="meta">
+        Criado Mon 25 January 2021 por
+        <a href="./author/sergio-berlotto.html">
+         Sérgio Berlotto
+        </a>
+       </span>
       </div>
      </div>
     </div>
@@ -95,14 +119,61 @@
   <div class="container">
    <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+     <!-- Post Content -->
      <article>
+      <p>
+       Vou falar qual foi minha impressão inicial sobre ele.
+Headline: Funciona de verdade?
+Header_Cover: static/posts/windows.png
+Status: draft
+      </p>
+      <p>
+       Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o 
+instalei num notebook para analisar e poder dar uma opinião sobre o ambiente. 
+Vou falar qual foi minha impressão inicial sobre ele.
+      </p>
+      <p>
+       E nada melhor do que fazer isso de forma profissional!
+      </p>
       <h1>
-       Sobre o Autor
+       Windows Dez
       </h1>
       <p>
-       Quando eu descobrir eu te digo! ;-)
+       Há muuuito tempo eu deixei de utilizar o Windows.
       </p>
+      <h1>
+       Windows Subsystem for Linux
+      </h1>
      </article>
+     <div class="tags">
+      <p>
+       tags:
+       <a href="./tag/windows.html">
+        windows
+       </a>
+       ,
+       <a href="./tag/linux.html">
+        linux
+       </a>
+       ,
+       <a href="./tag/wsl.html">
+        wsl
+       </a>
+       ,
+       <a href="./tag/ubuntu.html">
+        ubuntu
+       </a>
+       ,
+       <a href="./tag/integracao.html">
+        integracao
+       </a>
+       ,
+       <a href="./tag/code.html">
+        code
+       </a>
+      </p>
+     </div>
+     <hr/>
     </div>
    </div>
   </div>
@@ -184,7 +255,7 @@
         Programador Livre
        </span>
        " by
-       <a href=".." property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+       <a href="." property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
         Sérgio Berlotto
        </a>
        is
@@ -204,13 +275,13 @@
    </div>
   </footer>
   <!-- jQuery -->
-  <script src="../theme/js/jquery.min.js">
+  <script src="./theme/js/jquery.min.js">
   </script>
   <!-- Bootstrap Core JavaScript -->
-  <script src="../theme/js/bootstrap.min.js">
+  <script src="./theme/js/bootstrap.min.js">
   </script>
   <!-- Custom Theme JavaScript -->
-  <script src="../theme/js/clean-blog.min.js">
+  <script src="./theme/js/clean-blog.min.js">
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P8RS2G0QCD">
