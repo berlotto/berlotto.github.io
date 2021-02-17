@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Pipenv - ambientes virtuais profissionais
+  </title>
+  <link href="https://berlotto.github.io/feeds/all.atom.xml" rel="alternate" title="Programador Livre Full Atom Feed" type="application/atom+xml"/>
+  <link href="https://berlotto.github.io/feeds/{slug}.atom.xml" rel="alternate" title="Programador Livre Categories Atom Feed" type="application/atom+xml"/>
+  <!-- Bootstrap Core CSS -->
+  <link href="https://berlotto.github.io/theme/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="https://berlotto.github.io/theme/css/clean-blog.min.css" rel="stylesheet"/>
+  <!-- Code highlight color scheme -->
+  <link href="https://berlotto.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet"/>
+  <!-- CSS specified by the user -->
+  <link href="https://berlotto.github.io/static/custom.css" rel="stylesheet"/>
+  <!-- Custom Fonts -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  <meta content="O poder dos ambientes virtuais" name="description"/>
+  <meta content="Sérgio Berlotto" name="author"/>
+  <meta content="python" name="tags"/>
+  <meta content="pipenv" name="tags"/>
+  <meta content="virtualenv" name="tags"/>
+  <meta content="" property="og:locale"/>
+  <meta content="Programador Livre" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="https://berlotto.github.io/author/sergio-berlotto.html" property="article:author"/>
+  <meta content="https://berlotto.github.io/pipenv-ambientes-virtuais-profissionais.html" property="og:url"/>
+  <meta content="Pipenv - ambientes virtuais profissionais" property="og:title"/>
+  <meta content="2021-02-16 13:00:00-03:00" property="article:published_time"/>
+  <meta content="O poder dos ambientes virtuais" property="og:description"/>
+  <meta content="https://berlotto.github.io/static/posts/environmental.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@sergioberlotto" name="twitter:site"/>
+  <meta content="Pipenv - ambientes virtuais profissionais" name="twitter:title"/>
+  <meta content="https://berlotto.github.io/static/posts/environmental.jpg" name="twitter:image"/>
+  <meta content="O poder dos ambientes virtuais" name="twitter:description"/>
+  <link href="https://berlotto.github.io/pipenv-ambientes-virtuais-profissionais.html" rel="canonical"/>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Pipenv ambientes virtuais profissionais", "item": "https://berlotto.github.io/pipenv-ambientes-virtuais-profissionais.html"}]}
+  </script>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Pipenv - ambientes virtuais profissionais", "about": "python", "datePublished": "2021-02-16 13:00"}
+  </script>
+ </head>
+ <body class="article-pipenv-ambientes-virtuais-profissionais">
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+     <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+      <span class="sr-only">
+       Toggle navigation
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+     </button>
+     <a class="navbar-brand" href="https://berlotto.github.io/">
+      Programador Livre
+     </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <li>
+       <a href="https://berlotto.github.io/pages/sobre.html">
+        Quem sou eu
+       </a>
+      </li>
+      <li>
+       <a href="https://github.com/berlotto" target="_blank">
+        Author profile
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container -->
+  </nav>
+  <!-- Page Header -->
+  <header class="intro-header" style="background-image: url('https://berlotto.github.io/static/posts/environmental.jpg')">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-heading">
+       <h1>
+        Pipenv - ambientes virtuais profissionais
+       </h1>
+       <h3 class="subheading">
+        O poder dos ambientes virtuais
+       </h3>
+       <span class="meta">
+        Criado Tue 16 February 2021 por
+        <a href="https://berlotto.github.io/author/sergio-berlotto.html">
+         Sérgio Berlotto
+        </a>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+     <!-- Post Content -->
+     <article>
+      <p>
+       Quem trabalha com Python sabe o quanto temos disponíveis diferentes tipos e versões de bibliotecas. 
+E os ambientes virtuais vieram para nos ajudar a trabalhar com várias delas ao mesmo tempo. Mas, com eles
+vieram também alguns trampos a mais ... hehe
+      </p>
+      <p>
+       Enntão vamos aprender a utilizar uma ferramenta que gerencia tudo pra nós!
+      </p>
+      <h1>
+       Pipenv
+      </h1>
+      <p>
+       O pipenv é uma ferramenta que cria uma camada auxiliar no trabalho com os ambientes virtuais.
+      </p>
+      <p>
+       Vocês lembram o que são os ambientes virtuais ?
+      </p>
+      <blockquote>
+       <p>
+        "Ambientes virtuais são um conjunto de diretórios que isolam versões de bibliotecas
+do Python de forma local, separando-as das versões globais que acompanham o sistema 
+operacional."
+       </p>
+       <p>
+        --
+        <cite>
+         <a href="https://medium.com/@lucasferreiraos/python-django-e-ambientes-virtuais-uma-rela%C3%A7%C3%A3o-de-organiza%C3%A7%C3%A3o-e-produtividade-dafb51f11b23">
+          Lucas Ferreira
+         </a>
+        </cite>
+       </p>
+      </blockquote>
+      <p>
+       A ferramenta original do python criada para criar os ambientes virtuais é o
+       <code>
+        virtualenv
+       </code>
+       . Mas ele tem 
+seus problemas: ele é muuuito manual, e cria o ambiente virtual no diretório corrente ou temos que 
+ficar especificando os caminhos.
+      </p>
+      <p>
+       Daí entrou o virtualenv-wrapper, mas tem também seus poréns, com ele precisamos lembrar dos nomes
+dos ambientes além de ficar ativando e desativando manual...
+      </p>
+      <p>
+       Além disto, em ambas é chato ficar gerenciando o famoso arquivo requirements.txt que todo pythonista
+conhece. Adicionar e remover bibliotecas é um trabalho muito manual e ainda, quando necessitamos gerenciar
+umas bibliotecas para ambiente de dev e outras para ambiente de produção, aí sim o negócio fica complicado.
+      </p>
+      <p>
+       Esses "problemas" todo dev python passa no início.. não adianta. Mas é um aprendizado, eu sempre falo que:
+       <em>
+        antes de usar uma ferramenta de mais alto nível, aprenda o que está sendo feito por baixo dos panos
+       </em>
+       .
+      </p>
+      <p>
+       Em todas essas tarefas e talvez mais um pouco também o Pipenv nos auxilia muito
+      </p>
+      <h3>
+       Hands-on
+      </h3>
+      <p>
+       Então vamos pôr a mão na massa.
+      </p>
+      <p>
+       Primeiro a instalação
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pip install pipenv
+</code></pre>
+      </div>
+      <p>
+       Agora temos que entender uma coisa que é diferente no pipenv com relação aos outros: ele
+controla seu ambiente através de dois arquivos: Pipfile e Pipfile.lock
+      </p>
+      <p>
+       O Pipfile é atualizado cada vez que você adiciona, remove ou atualiza a versao de uma
+biblioteca e juntamente com o Pipfile.lock ele gerencia de forma inteligente as 
+dependencias e as bibliotecas utilizadas. 
+Você não necessita alterar estes arquivos, quem faz isso é o pipenv mesmo.
+      </p>
+      <h3>
+       Criar o ambiente
+      </h3>
+      <p>
+       Com o pipenv você não precisa se preocupar em utilizar o pip e o virtualenv em separados. É muito fácil iniciar um novo ambiente virtual:
+      </p>
+      <p>
+       Utiliza a versão 3 do interpretador do Python
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv --three
+</code></pre>
+      </div>
+      <p>
+       Utiliza a versão 2 do Python
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv --two
+</code></pre>
+      </div>
+      <p>
+       Utiliza o interpretador do Python informado
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv --python /path/to/specific/python
+</code></pre>
+      </div>
+      <p>
+       Além de criar o ambiente com a versão 3 do Python já instala a biblioteca pandas também
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv install pandas --three
+</code></pre>
+      </div>
+      <p>
+       O nome do ambiente virtual é criado utilizando o nome da pasta onde você está, mais uma hash string, ficando algo
+assim: "testepy--lF-Jmev"
+      </p>
+      <p>
+       Veja um exemplo:
+      </p>
+      <script async="" id="asciicast-OnZAACzbbi4m8f5E5rRAacTW1" src="https://asciinema.org/a/OnZAACzbbi4m8f5E5rRAacTW1.js">
+      </script>
+      <h3>
+       Removendo
+      </h3>
+      <p>
+       Para remover um ambiente virtual criado, basta executar
+       <code>
+        pipenv --rm
+       </code>
+       no diretório do projeto.
+      </p>
+      <script async="" id="asciicast-4aigyui8MxLmjc4DM07h71iak" src="https://asciinema.org/a/4aigyui8MxLmjc4DM07h71iak.js">
+      </script>
+      <h3>
+       Gerenciando bibliotecas
+      </h3>
+      <p>
+       Para gerenciar (instalar, atualizar e remover) bibliotecas no ambiente virtual e para que elas fiquem registradas 
+corretamente no Pipfile, devemos utilizar os comandos a seguir:
+      </p>
+      <p>
+       Caso queira adicionar uma lib:
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv install &lt;lib&gt;
+</code></pre>
+      </div>
+      <p>
+       Caso queira instalar todas libs definidas no Pipenv file, quando faz o clone do projeto por exemplo:
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv install
+</code></pre>
+      </div>
+      <p>
+       Caso queira remover uma lib
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv uninstall &lt;lib&gt;
+</code></pre>
+      </div>
+      <p>
+       Caso queira instalar de um arquivo requirements
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv install -r requirements.txt
+</code></pre>
+      </div>
+      <p>
+       Caso queira atualizar as bibliotecas:
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv update --outdated
+</code></pre>
+      </div>
+      <p>
+       Caso queira instalar uma lib somente para os ambiente de desenvolvimento
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv install &lt;lib&gt; --dev
+</code></pre>
+      </div>
+      <script async="" id="asciicast-RXJB9WwxwIxCRBYhdqtLLr2w6" src="https://asciinema.org/a/RXJB9WwxwIxCRBYhdqtLLr2w6.js">
+      </script>
+      <p>
+       E agora, para você ver tudo que foi instalado, use o comandp
+       <code>
+        graph
+       </code>
+      </p>
+      <script async="" id="asciicast-J4p21Th6fF8Ll2iwQKGQml739" src="https://asciinema.org/a/J4p21Th6fF8Ll2iwQKGQml739.js">
+      </script>
+      <h3>
+       Executar o seu projeto
+      </h3>
+      <p>
+       Claro, que depois de definir e instalar suas dependencias e bibliotecas do seu projeto, você 
+precisa, obviamente, executar seu script ou programa python.
+      </p>
+      <p>
+       Mas como se faz isso utilizando o pipenv ?
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv run python main.py
+</code></pre>
+      </div>
+      <p>
+       Sim, você precisa rodar assim pois você
+       <em>
+        não precisa estar com o ambiente virtual ativado
+       </em>
+       sempre, como
+acontece com as outras ferramentas.
+      </p>
+      <p>
+       Claro, se você quiser, pode
+       <em>
+        entrar
+       </em>
+       no ambiente virtual e executar os scripts de lá.
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv shell
+</code></pre>
+      </div>
+      <h3>
+       Instalação em produção
+      </h3>
+      <p>
+       Para você executar a instalação em produção, você não precisa instalar o que foi utilizado em
+       <code>
+        dev
+       </code>
+       .
+      </p>
+      <p>
+       Para fazer a instalação diretamente no sistema, como quando você precisa fazer isso em um Docker por exemplo,
+você utiliza o seguinte comando:
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv install --system
+</code></pre>
+      </div>
+      <p>
+       Com ele, o pipenv utiliza o pip do sistema e não do virtualenv. Mas o melhor é utilizar o comando deploy,
+que faz a verificação se as bibliotecas estão devidamente "locked" no arquivo Pipfile.lock e aborta se não
+estiver.
+      </p>
+      <p>
+       Para garantir é sempre bom executar o
+       <code>
+        lock
+       </code>
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ pipenv lock
+</code></pre>
+      </div>
+      <h3>
+       Conclusão
+      </h3>
+      <p>
+       E com isto, acho que conseguimos passar pelos pontos mais importantes do pipenv.
+      </p>
+      <ul>
+       <li>
+        Como criar e remover os ambientes virtuais
+       </li>
+       <li>
+        Como o Pipenv gerencia as dependencias pelo Pipfile
+       </li>
+       <li>
+        Como executar comandos dentro do ambiente
+       </li>
+       <li>
+        Como gerenciar as libs para o ambiente de dev e de prod
+       </li>
+       <li>
+        Como fazer o deploy e o lock
+       </li>
+      </ul>
+      <p>
+       Ele tem outros comandos também, por exemplo, o
+       <code>
+        clean
+       </code>
+       que desinstala todas as 
+biblitecas do ambiente, que não estão definidas no Pipfile. Daí só você desbravar um pouco 
+mais através do
+       <code>
+        pipenv --help
+       </code>
+       .
+      </p>
+      <p>
+       <small>
+        Todo este post foi baseado na documentação do Pipenv: https://pipenv.pypa.io/en/latest/
+       </small>
+      </p>
+      <p>
+       <small>
+        Terminais gravados com https://asciinema.org/
+       </small>
+      </p>
+     </article>
+     <div class="tags">
+      <p>
+       tags:
+       <a href="https://berlotto.github.io/tag/python.html">
+        python
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/pipenv.html">
+        pipenv
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/virtualenv.html">
+        virtualenv
+       </a>
+      </p>
+     </div>
+     <hr/>
+     <div class="comments">
+      <h2>
+       Comments !
+      </h2>
+      <div id="disqus_thread">
+      </div>
+      <script type="text/javascript">
+       var disqus_shortname = 'berlottogithubio';
+                var disqus_identifier = 'pipenv-ambientes-virtuais-profissionais.html';
+                var disqus_url = 'https://berlotto.github.io/pipenv-ambientes-virtuais-profissionais.html';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//berlottogithubio.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+      </script>
+      <noscript>
+       Please enable JavaScript to view the comments.
+      </noscript>
+     </div>
+    </div>
+   </div>
+  </div>
+  <hr/>
+  <!-- Footer -->
+  <footer>
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <ul class="list-inline text-center">
+       <li>
+        <a href="https://twitter.com/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-github fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://facebook.com/sergio.berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.linkedin.com/in/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-linkedin fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-telegram fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+      </ul>
+      <p class="copyright text-muted">
+       Blog criado com
+       <a href="http://getpelican.com">
+        Pelican
+       </a>
+       ,
+    and
+       <a href="http://python.org">
+        Python
+       </a>
+       .
+       <br/>
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        <img alt="Creative Commons License" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" style="border-width:0"/>
+       </a>
+       "
+       <span property="dct:title" xmlns:dct="http://purl.org/dc/terms/">
+        Programador Livre
+       </span>
+       " by
+       <a href="https://berlotto.github.io" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+        Sérgio Berlotto
+       </a>
+       is
+  licensed under a
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+       </a>
+       , except where indicated otherwise.
+
+    Todas imagens são do site
+       <a href="http://pixabay.com" target="_blank">
+        pixabay.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- jQuery -->
+  <script src="https://berlotto.github.io/theme/js/jquery.min.js">
+  </script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="https://berlotto.github.io/theme/js/bootstrap.min.js">
+  </script>
+  <!-- Custom Theme JavaScript -->
+  <script src="https://berlotto.github.io/theme/js/clean-blog.min.js">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P8RS2G0QCD">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P8RS2G0QCD');
+  </script>
+  <script type="text/javascript">
+   var disqus_shortname = 'berlottogithubio';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+ </body>
+</html>

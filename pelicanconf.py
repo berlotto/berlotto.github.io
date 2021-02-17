@@ -3,7 +3,7 @@
 
 AUTHOR = 'Sérgio Berlotto'
 SITENAME = 'Programador Livre'
-SITEURL = ''
+SITEURL = 'localhost:8000'
 
 PATH = 'content'
 
