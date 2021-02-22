@@ -1,5 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-02-16T13:00:00-03:00</updated><entry><title>Pipenv - ambientes virtuais profissionais</title><link href="https://berlotto.github.io/pipenv-ambientes-virtuais-profissionais.html" rel="alternate"></link><published>2021-02-16T13:00:00-03:00</published><updated>2021-02-16T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-02-16:/pipenv-ambientes-virtuais-profissionais.html</id><summary type="html">&lt;p&gt;Como conseguimos controlar nosso ambiente de desenvolvimento de forma profissional com o Pipenv.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Quem trabalha com Python sabe o quanto temos disponíveis diferentes tipos e versões de bibliotecas. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-02-21T13:00:00-03:00</updated><entry><title>Como executar um ambiente Jupyter em um docker localmente</title><link href="https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html" rel="alternate"></link><published>2021-02-21T13:00:00-03:00</published><updated>2021-02-21T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-02-21:/como-instalar-juoyter-notebook-no-docker.html</id><summary type="html">&lt;p&gt;Trabalhe como um cientista de dados profissional no seu computador local facilmente!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trabalhe como um cientista de dados profissional no seu computador local facilmente!&lt;/p&gt;
+&lt;h1&gt;Jupyter&lt;/h1&gt;
+&lt;p&gt;Jupyter é um ambiente muito prático que roda os tais "notebooks", que nada mais são do 
+que documentos definidos por células que contém código de executável ou markdown para 
+documentação.&lt;/p&gt;
+&lt;p&gt;Não é necessário explicar muito sobre como o ambiente funciona, até mesmo pq muito
+se fala sobre os tais notebooks e o Jupyter.&lt;/p&gt;
+&lt;p&gt;Mas, para diversificar um pouco, tendo os kernels instalados, conseguimos rodar não
+só Python, mas Julia e R também, e se quiser dar uma olhadinha em mais opções
+segue (este link)[https://github.com/jupyter/jupyter/wiki/Jupyter-kernels] e se aventura.&lt;/p&gt;
+&lt;p&gt;Isso mesmo! Inclusive, o passo-a-passo que você vai acompanhar logo abaixo irá 
+lhe conduzir a ter um ambiente contendo que rode Python, R e Julia também.&lt;/p&gt;
+&lt;h2&gt;Docker&lt;/h2&gt;
+&lt;p&gt;Bom, como muita aplicação hoje em dia, rodar o Jupyter é muito fácil por
+conta do Docker. &lt;/p&gt;
+&lt;p&gt;Tenha em mente que é necessário ter o docker instalado em sua máquina.&lt;/p&gt;
+&lt;p&gt;No Windowsvocê consegue instalar o Docker Desktop e no linux, diretamente pelo 
+terminal.&lt;/p&gt;
+&lt;h2&gt;Imagens disponíveis&lt;/h2&gt;
+&lt;p&gt;Bom, em se tratando de data-science, temos muuuuitas opções e direções. &lt;/p&gt;
+&lt;p&gt;Podemos falar de gestão/ingestão de dados, de conhecimento de dados, de big data, de 
+machine learning, de visão computacional, etc, etc, etc...&lt;/p&gt;
+&lt;p&gt;O projeto do Jupyter conhece bem seu eleitorado, e já disponibilizou uma séria de 
+imagens docker que são muito bem organizadas e pré-instaladas para que possamos 
+só rodar o container e sair trabalhando.&lt;/p&gt;
+&lt;p&gt;O projeto que vamos conhecer é este: https://jupyter-docker-stacks.readthedocs.io&lt;/p&gt;
+&lt;p&gt;Vamos dar uma olhadinha nas opções rapidamente para você saber qual imagem você irá ]escolher:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;jupyter/base-notebook&lt;ul&gt;
+&lt;li&gt;O mininmo necessário para rodar os notebooks, sem bibliotecas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/minimal-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no base, mais algumas ferramentas, como git, vim, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/r-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no minimal, mais o ambiente do R e várias bibliotecas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/scipy-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no minimal, mais várias bibliotecas de ciência de dados, scipy, scikit-learn, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/tensorflow-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no scipy mais Tensorflow e Keras&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/datascience-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no scipy e r mais o ambiente Julia &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/pyspark-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no scipy mais Apache Spark&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;jupyter/all-spark-notebook&lt;ul&gt;
+&lt;li&gt;Tudo que tem no pyspark mais suporte para Scala&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Diagrama das imagens" src="http://interactive.blockdiag.com/image?compression=deflate&amp;amp;encoding=base64&amp;amp;src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA"&gt;&lt;/p&gt;
+&lt;h2&gt;Executando&lt;/h2&gt;
+&lt;p&gt;Bom, agora que já temos ideia de qual imagem queremos iniciar, vamos fazer o que temos
+que fazer.&lt;/p&gt;
+&lt;p&gt;Lembrando que, apesar das imagens terem um propósito e terem já algumas libs instaladas
+, em todas elas você consegue customizar o ambiente conforme seu desejo. &lt;/p&gt;
+&lt;p&gt;O notebook tem dois modos de ser executado: O classico e o lab&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;o lab: é uma versão mais nova, com novos recursos e mais opções de trabalho que o classic, possibilita trabalhar com abas e mais de um notebook por vez.&lt;/li&gt;
+&lt;li&gt;o classic: é a versão mais antiga com menos recursos, e uma visão de 1 notebook só por vez.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vamos executar o lab, e para isso necessita passar um parametro: JUPYTER_ENABLE_LAB=yes&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;docker run -d --name jupyterserver -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-notebook&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Outro detalhe é que por padrão a porta do jupyter server é 8888, o que geralmente não é 
+ruim, então vamos utilizar esta porta mesmo. Mas nas configurações tem como trocar 
+isso, entre outras opções também.&lt;/p&gt;
+&lt;p&gt;Executando o comando acima, você será capaz de acessar o notebook pelo seu browser na
+porta 8888: http://localhost:8888&lt;/p&gt;
+&lt;p&gt;Mas, será necessário informar um token que é gerado pelo servidor, para poder acessá-lo.
+Para você poder ver e acessar esse token, você pode executar um comandinho para ver o 
+log do seu container e assim poder clicar no link para abrir no browser.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;docker logs --tail=50 jupyterserver&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Mas, para facilitar e, se você está executando o servidor no seu computador e não necessita de segurança, você pode inibir os dois métodos de segurança que tem, que é o
+token e a senha, com este comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;docker run -d --name jupyterserver -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-notebook start-notebook.sh --NotebookApp.password=&amp;#39;&amp;#39;  --NotebookApp.token=&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E por último, eu recomendo que você configura uma pasta local no seu computador (por 
+exemplo /home/meu-user/notebooks) para que todo seu trabalho não fique apenas dentro do 
+container e muito difícil de obter
+depois. Então, utilizamos o volume do docker para essa tarefa.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ docker run -d &lt;span class="se"&gt;\&lt;/span&gt;
+    --name jupyterserver &lt;span class="se"&gt;\&lt;/span&gt;
+    -p &lt;span class="m"&gt;8888&lt;/span&gt;:8888 &lt;span class="se"&gt;\&lt;/span&gt;
+    -v /home/meu-user/notebooks:/home/jovyan/work &lt;span class="se"&gt;\&lt;/span&gt;
+    -e &lt;span class="nv"&gt;JUPYTER_ENABLE_LAB&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes &lt;span class="se"&gt;\&lt;/span&gt;
+    jupyter/datascience-notebook &lt;span class="se"&gt;\&lt;/span&gt;
+    start-notebook.sh --NotebookApp.password&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt; --NotebookApp.token&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Assim, facilmente, acessando seu browser, sem a necessitade de senhas ou tokens, você
+terá um ótimo ambiente para executar seus treinamentos de código, apreder mais sobre
+machine learning, data-science, com Python, R ou Julia!&lt;/p&gt;
+&lt;h3&gt;Conclusão&lt;/h3&gt;
+&lt;p&gt;Facilmente você tem um ambiente muito prático e configurável para poder estudar 
+seus conteúdos e seus dados.&lt;/p&gt;
+&lt;p&gt;Desbrave e utilize bastante este ambiente que é muito rico&lt;/p&gt;
+&lt;p&gt;Bom trabalho!&lt;/p&gt;</content><category term="data-science"></category><category term="editores"></category><category term="codigo"></category><category term="notebook"></category><category term="jupyter"></category></entry><entry><title>Pipenv - ambientes virtuais profissionais</title><link href="https://berlotto.github.io/pipenv-ambientes-virtuais-profissionais.html" rel="alternate"></link><published>2021-02-16T13:00:00-03:00</published><updated>2021-02-16T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-02-16:/pipenv-ambientes-virtuais-profissionais.html</id><summary type="html">&lt;p&gt;Como conseguimos controlar nosso ambiente de desenvolvimento de forma profissional com o Pipenv.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Quem trabalha com Python sabe o quanto temos disponíveis diferentes tipos e versões de bibliotecas. 
 E os ambientes virtuais vieram para nos ajudar a trabalhar com várias delas ao mesmo tempo. Mas, com eles
 vieram também alguns trampos a mais ... hehe&lt;/p&gt;
 &lt;p&gt;Enntão vamos aprender a utilizar uma ferramenta que gerencia tudo pra nós!&lt;/p&gt;
@@ -149,7 +265,24 @@ estiver.&lt;/p&gt;
 biblitecas do ambiente, que não estão definidas no Pipfile. Daí só você desbravar um pouco 
 mais através do &lt;code&gt;pipenv --help&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;small&gt;Todo este post foi baseado na documentação do Pipenv: https://pipenv.pypa.io/en/latest/&lt;/small&gt;&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Terminais gravados com https://asciinema.org/&lt;/small&gt;&lt;/p&gt;</content><category term="python"></category><category term="python"></category><category term="pipenv"></category><category term="virtualenv"></category></entry><entry><title>Quero iniciar a programar, por qual linguagem eu começo ?</title><link href="https://berlotto.github.io/iniciar-a-programar.html" rel="alternate"></link><published>2021-01-24T13:00:00-03:00</published><updated>2021-01-24T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-24:/iniciar-a-programar.html</id><summary type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Terminais gravados com https://asciinema.org/&lt;/small&gt;&lt;/p&gt;</content><category term="python"></category><category term="python"></category><category term="pipenv"></category><category term="virtualenv"></category></entry><entry><title>Primeiras impressoes do Windows WSL2</title><link href="https://berlotto.github.io/windows-wsl-primeiras-impressoes.html" rel="alternate"></link><published>2021-01-25T13:00:00-03:00</published><updated>2021-01-25T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-25:/windows-wsl-primeiras-impressoes.html</id><summary type="html">&lt;p&gt;Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o instalei num notebook para analisar e poder dar uma opinião sobre o ambiente.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o 
+instalei num notebook para analisar e poder dar uma opinião sobre o ambiente. 
+Vou falar qual foi minha impressão inicial sobre ele.&lt;/p&gt;
+&lt;p&gt;E nada melhor do que fazer isso de forma profissional!&lt;/p&gt;
+&lt;h1&gt;Windows Dez&lt;/h1&gt;
+&lt;p&gt;Há muuuito tempo eu deixei de utilizar o Windows. Desde os anos 2000, ali por 2005 eu acho, eu nunca mais tinha instalado um Windows em uma máquina que eu utilizasse para 
+lazer ou trabalho. Acho que parei no Windows 8 eu acho. Era o 8 né ?&lt;/p&gt;
+&lt;p&gt;Pois é, até este tempo o windows era um adversário ferrenho dos ambiente *nix, 
+porém nunca o superou, na minha opinião, na questão estabilidade e funcionalidade.&lt;/p&gt;
+&lt;p&gt;O que com o Linux era muito fácil de fazer ou simplesmente tinha uma forma de fazer, com o
+windows era mais complicado, muito trabalhoso.&lt;/p&gt;
+&lt;p&gt;Fora que, na área de programação, trabalhar com linguagens que se integravam muito bem
+com ambientes linux, como o Python, por exemplo, era uma trabalheira para utilizar 
+no Windows.&lt;/p&gt;
+&lt;p&gt;Fora a questão virus: Windows é um ímã. Linux? nada de virus, segurança total.&lt;/p&gt;
+&lt;p&gt;Vida vai, vida vem e pá: a MS resolve aceitar o Linux. Eis que em dado momento nasce o
+tal WSL.&lt;/p&gt;
+&lt;h1&gt;Windows Subsystem for Linux&lt;/h1&gt;</content><category term="windows"></category><category term="windows"></category><category term="linux"></category><category term="wsl"></category><category term="ubuntu"></category><category term="integracao"></category><category term="code"></category></entry><entry><title>Quero iniciar a programar, por qual linguagem eu começo ?</title><link href="https://berlotto.github.io/iniciar-a-programar.html" rel="alternate"></link><published>2021-01-24T13:00:00-03:00</published><updated>2021-01-24T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-24:/iniciar-a-programar.html</id><summary type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Esta é uma pergunta que muitos iniciantes em programação fazem, querem saber por qual linguagem eles devem iniciar a programar.&lt;/p&gt;
 &lt;p&gt;Bem, é uma questão muito difícil de se resolver assim de cara, não existem linguagens que sejam para iniciar a programar, não existem linguagens que sejam para perfis definidos de programadores, existem sim linguagens de programação para muitos fins e com focos e métodos de desenvolvimento diferenciados.&lt;/p&gt;
 &lt;p&gt;Vejamos, por exemplo&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Assembly&lt;/strong&gt;&lt;/p&gt;

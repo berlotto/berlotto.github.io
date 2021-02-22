@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre - windows</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/windows.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-01-25T13:00:00-03:00</updated><entry><title>Primeiras impressoes do Windows WSL2</title><link href="https://berlotto.github.io/windows-wsl-primeiras-impressoes.html" rel="alternate"></link><published>2021-01-25T13:00:00-03:00</published><updated>2021-01-25T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-01-25:/windows-wsl-primeiras-impressoes.html</id><summary type="html">&lt;p&gt;Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o instalei num notebook para analisar e poder dar uma opinião sobre o ambiente.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o 
+instalei num notebook para analisar e poder dar uma opinião sobre o ambiente. 
+Vou falar qual foi minha impressão inicial sobre ele.&lt;/p&gt;
+&lt;p&gt;E nada melhor do que fazer isso de forma profissional!&lt;/p&gt;
+&lt;h1&gt;Windows Dez&lt;/h1&gt;
+&lt;p&gt;Há muuuito tempo eu deixei de utilizar o Windows. Desde os anos 2000, ali por 2005 eu acho, eu nunca mais tinha instalado um Windows em uma máquina que eu utilizasse para 
+lazer ou trabalho. Acho que parei no Windows 8 eu acho. Era o 8 né ?&lt;/p&gt;
+&lt;p&gt;Pois é, até este tempo o windows era um adversário ferrenho dos ambiente *nix, 
+porém nunca o superou, na minha opinião, na questão estabilidade e funcionalidade.&lt;/p&gt;
+&lt;p&gt;O que com o Linux era muito fácil de fazer ou simplesmente tinha uma forma de fazer, com o
+windows era mais complicado, muito trabalhoso.&lt;/p&gt;
+&lt;p&gt;Fora que, na área de programação, trabalhar com linguagens que se integravam muito bem
+com ambientes linux, como o Python, por exemplo, era uma trabalheira para utilizar 
+no Windows.&lt;/p&gt;
+&lt;p&gt;Fora a questão virus: Windows é um ímã. Linux? nada de virus, segurança total.&lt;/p&gt;
+&lt;p&gt;Vida vai, vida vem e pá: a MS resolve aceitar o Linux. Eis que em dado momento nasce o
+tal WSL.&lt;/p&gt;
+&lt;h1&gt;Windows Subsystem for Linux&lt;/h1&gt;</content><category term="windows"></category><category term="windows"></category><category term="linux"></category><category term="wsl"></category><category term="ubuntu"></category><category term="integracao"></category><category term="code"></category></entry></feed>

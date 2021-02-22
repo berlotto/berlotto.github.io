@@ -5,7 +5,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Primeiras impressoes do Windows WSL
+   Executando queries e gerenciando o postgres de forma fácil
   </title>
   <link href="https://berlotto.github.io/feeds/all.atom.xml" rel="alternate" title="Programador Livre Full Atom Feed" type="application/atom+xml"/>
   <link href="https://berlotto.github.io/feeds/{slug}.atom.xml" rel="alternate" title="Programador Livre Categories Atom Feed" type="application/atom+xml"/>
@@ -27,37 +27,35 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-  <meta content="Funciona de verdade?" name="description"/>
+  <meta content="&lt;texto que aparece no como subtítulo&gt;" name="description"/>
   <meta content="Sérgio Berlotto" name="author"/>
-  <meta content="windows" name="tags"/>
-  <meta content="linux" name="tags"/>
-  <meta content="wsl" name="tags"/>
-  <meta content="ubuntu" name="tags"/>
-  <meta content="integracao" name="tags"/>
-  <meta content="code" name="tags"/>
+  <meta content="postgres" name="tags"/>
+  <meta content="bancodedados" name="tags"/>
+  <meta content="dados" name="tags"/>
+  <meta content="pgsql" name="tags"/>
   <meta content="" property="og:locale"/>
   <meta content="Programador Livre" property="og:site_name"/>
   <meta content="article" property="og:type"/>
   <meta content="https://berlotto.github.io/author/sergio-berlotto.html" property="article:author"/>
-  <meta content="https://berlotto.github.io/drafts/windows-wsl-primeiras-impressoes.html" property="og:url"/>
-  <meta content="Primeiras impressoes do Windows WSL" property="og:title"/>
-  <meta content="2021-01-25 13:00:00-03:00" property="article:published_time"/>
-  <meta content="Funciona de verdade?" property="og:description"/>
-  <meta content="https://berlotto.github.io/static/posts/windows.png" property="og:image"/>
+  <meta content="https://berlotto.github.io/drafts/executando-queries-e-gerenciando-postgres-de-forma-facil.html" property="og:url"/>
+  <meta content="Executando queries e gerenciando o postgres de forma fácil" property="og:title"/>
+  <meta content="2021-01-28 13:00:00-03:00" property="article:published_time"/>
+  <meta content="&lt;texto que aparece no como subtítulo&gt;" property="og:description"/>
+  <meta content="https://berlotto.github.io/static/posts/cloud.jpg" property="og:image"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="@sergioberlotto" name="twitter:site"/>
-  <meta content="Primeiras impressoes do Windows WSL" name="twitter:title"/>
-  <meta content="https://berlotto.github.io/static/posts/windows.png" name="twitter:image"/>
-  <meta content="Funciona de verdade?" name="twitter:description"/>
-  <link href="https://berlotto.github.io/drafts/windows-wsl-primeiras-impressoes.html" rel="canonical"/>
+  <meta content="Executando queries e gerenciando o postgres de forma fácil" name="twitter:title"/>
+  <meta content="https://berlotto.github.io/static/posts/cloud.jpg" name="twitter:image"/>
+  <meta content="&lt;texto que aparece no como subtítulo&gt;" name="twitter:description"/>
+  <link href="https://berlotto.github.io/drafts/executando-queries-e-gerenciando-postgres-de-forma-facil.html" rel="canonical"/>
   <script type="application/ld+json">
-   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "https://berlotto.github.io/drafts"}, {"@type": "ListItem", "position": 3, "name": "Windows wsl primeiras impressoes", "item": "https://berlotto.github.io/drafts/windows-wsl-primeiras-impressoes.html"}]}
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "https://berlotto.github.io/drafts"}, {"@type": "ListItem", "position": 3, "name": "Executando queries e gerenciando postgres de forma facil", "item": "https://berlotto.github.io/drafts/executando-queries-e-gerenciando-postgres-de-forma-facil.html"}]}
   </script>
   <script type="application/ld+json">
-   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Primeiras impressoes do Windows WSL", "about": "windows", "datePublished": "2021-01-25 13:00"}
+   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Executando queries e gerenciando o postgres de forma fácil", "about": "database", "datePublished": "2021-01-28 13:00"}
   </script>
  </head>
- <body class="article-windows-wsl-primeiras-impressoes">
+ <body class="article-executando-queries-e-gerenciando-postgres-de-forma-facil">
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
    <div class="container-fluid">
@@ -98,19 +96,20 @@
    <!-- /.container -->
   </nav>
   <!-- Page Header -->
-  <header class="intro-header" style="background-image: url('https://berlotto.github.io/static/posts/windows.png')">
+  <header class="intro-header" style="background-image: url('https://berlotto.github.io/static/posts/cloud.jpg')">
    <div class="container">
     <div class="row">
      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-heading">
        <h1>
-        Primeiras impressoes do Windows WSL
+        Executando queries e gerenciando o postgres de forma fácil
        </h1>
        <h3 class="subheading">
-        Funciona de verdade?
+        <texto aparece="" como="" no="" que="" subtítulo="">
+        </texto>
        </h3>
        <span class="meta">
-        Criado Mon 25 January 2021 por
+        Criado Thu 28 January 2021 por
         <a href="https://berlotto.github.io/author/sergio-berlotto.html">
          Sérgio Berlotto
         </a>
@@ -127,48 +126,41 @@
      <!-- Post Content -->
      <article>
       <p>
-       Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o 
-instalei num notebook para analisar e poder dar uma opinião sobre o ambiente. 
-Vou falar qual foi minha impressão inicial sobre ele.
-      </p>
-      <p>
-       E nada melhor do que fazer isso de forma profissional!
+       Aqui inicia de fato o conteúdo da postagem...
       </p>
       <h1>
-       Windows Dez
+       Postgres PgAdmin
       </h1>
       <p>
-       Há muuuito tempo eu deixei de utilizar o Windows.
+       Como rodar com o docker configurando parametros de acesso...
       </p>
-      <h1>
-       Windows Subsystem for Linux
-      </h1>
+      <p>
+       como rodar com um docker-compose junto à um banco
+      </p>
+      <p>
+       Apresentar a interface e o que se pode fazer com ela..
+      </p>
+      <p>
+       Apresentar a query-eplain gráfica.
+      </p>
      </article>
      <div class="tags">
       <p>
        tags:
-       <a href="https://berlotto.github.io/tag/windows.html">
-        windows
+       <a href="https://berlotto.github.io/tag/postgres.html">
+        postgres
        </a>
        ,
-       <a href="https://berlotto.github.io/tag/linux.html">
-        linux
+       <a href="https://berlotto.github.io/tag/bancodedados.html">
+        bancodedados
        </a>
        ,
-       <a href="https://berlotto.github.io/tag/wsl.html">
-        wsl
+       <a href="https://berlotto.github.io/tag/dados.html">
+        dados
        </a>
        ,
-       <a href="https://berlotto.github.io/tag/ubuntu.html">
-        ubuntu
-       </a>
-       ,
-       <a href="https://berlotto.github.io/tag/integracao.html">
-        integracao
-       </a>
-       ,
-       <a href="https://berlotto.github.io/tag/code.html">
-        code
+       <a href="https://berlotto.github.io/tag/pgsql.html">
+        pgsql
        </a>
       </p>
      </div>

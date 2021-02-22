@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Como executar um ambiente Jupyter em um docker localmente
+  </title>
+  <link href="https://berlotto.github.io/feeds/all.atom.xml" rel="alternate" title="Programador Livre Full Atom Feed" type="application/atom+xml"/>
+  <link href="https://berlotto.github.io/feeds/{slug}.atom.xml" rel="alternate" title="Programador Livre Categories Atom Feed" type="application/atom+xml"/>
+  <!-- Bootstrap Core CSS -->
+  <link href="https://berlotto.github.io/theme/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="https://berlotto.github.io/theme/css/clean-blog.min.css" rel="stylesheet"/>
+  <!-- Code highlight color scheme -->
+  <link href="https://berlotto.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet"/>
+  <!-- CSS specified by the user -->
+  <link href="https://berlotto.github.io/static/custom.css" rel="stylesheet"/>
+  <!-- Custom Fonts -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  <meta content="Saiba como executar um ambiente completo e muito útil" name="description"/>
+  <meta content="Sérgio Berlotto" name="author"/>
+  <meta content="editores" name="tags"/>
+  <meta content="codigo" name="tags"/>
+  <meta content="notebook" name="tags"/>
+  <meta content="jupyter" name="tags"/>
+  <meta content="" property="og:locale"/>
+  <meta content="Programador Livre" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="https://berlotto.github.io/author/sergio-berlotto.html" property="article:author"/>
+  <meta content="https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html" property="og:url"/>
+  <meta content="Como executar um ambiente Jupyter em um docker localmente" property="og:title"/>
+  <meta content="2021-02-21 13:00:00-03:00" property="article:published_time"/>
+  <meta content="Saiba como executar um ambiente completo e muito útil" property="og:description"/>
+  <meta content="https://berlotto.github.io/static/posts/jupyter.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@sergioberlotto" name="twitter:site"/>
+  <meta content="Como executar um ambiente Jupyter em um docker localmente" name="twitter:title"/>
+  <meta content="https://berlotto.github.io/static/posts/jupyter.jpg" name="twitter:image"/>
+  <meta content="Saiba como executar um ambiente completo e muito útil" name="twitter:description"/>
+  <link href="https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html" rel="canonical"/>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Como instalar juoyter notebook no docker", "item": "https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html"}]}
+  </script>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Como executar um ambiente Jupyter em um docker localmente", "about": "data-science", "datePublished": "2021-02-21 13:00"}
+  </script>
+ </head>
+ <body class="article-como-instalar-juoyter-notebook-no-docker">
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+     <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+      <span class="sr-only">
+       Toggle navigation
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+     </button>
+     <a class="navbar-brand" href="https://berlotto.github.io/">
+      Programador Livre
+     </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <li>
+       <a href="https://berlotto.github.io/pages/sobre.html">
+        Quem sou eu
+       </a>
+      </li>
+      <li>
+       <a href="https://github.com/berlotto" target="_blank">
+        Author profile
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container -->
+  </nav>
+  <!-- Page Header -->
+  <header class="intro-header" style="background-image: url('https://berlotto.github.io/static/posts/jupyter.jpg')">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-heading">
+       <h1>
+        Como executar um ambiente Jupyter em um docker localmente
+       </h1>
+       <h3 class="subheading">
+        Saiba como executar um ambiente completo e muito útil
+       </h3>
+       <span class="meta">
+        Criado Sun 21 February 2021 por
+        <a href="https://berlotto.github.io/author/sergio-berlotto.html">
+         Sérgio Berlotto
+        </a>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+     <!-- Post Content -->
+     <article>
+      <p>
+       Trabalhe como um cientista de dados profissional no seu computador local facilmente!
+      </p>
+      <h1>
+       Jupyter
+      </h1>
+      <p>
+       Jupyter é um ambiente muito prático que roda os tais "notebooks", que nada mais são do 
+que documentos definidos por células que contém código de executável ou markdown para 
+documentação.
+      </p>
+      <p>
+       Não é necessário explicar muito sobre como o ambiente funciona, até mesmo pq muito
+se fala sobre os tais notebooks e o Jupyter.
+      </p>
+      <p>
+       Mas, para diversificar um pouco, tendo os kernels instalados, conseguimos rodar não
+só Python, mas Julia e R também, e se quiser dar uma olhadinha em mais opções
+segue (este link)[https://github.com/jupyter/jupyter/wiki/Jupyter-kernels] e se aventura.
+      </p>
+      <p>
+       Isso mesmo! Inclusive, o passo-a-passo que você vai acompanhar logo abaixo irá 
+lhe conduzir a ter um ambiente contendo que rode Python, R e Julia também.
+      </p>
+      <h2>
+       Docker
+      </h2>
+      <p>
+       Bom, como muita aplicação hoje em dia, rodar o Jupyter é muito fácil por
+conta do Docker.
+      </p>
+      <p>
+       Tenha em mente que é necessário ter o docker instalado em sua máquina.
+      </p>
+      <p>
+       No Windowsvocê consegue instalar o Docker Desktop e no linux, diretamente pelo 
+terminal.
+      </p>
+      <h2>
+       Imagens disponíveis
+      </h2>
+      <p>
+       Bom, em se tratando de data-science, temos muuuuitas opções e direções.
+      </p>
+      <p>
+       Podemos falar de gestão/ingestão de dados, de conhecimento de dados, de big data, de 
+machine learning, de visão computacional, etc, etc, etc...
+      </p>
+      <p>
+       O projeto do Jupyter conhece bem seu eleitorado, e já disponibilizou uma séria de 
+imagens docker que são muito bem organizadas e pré-instaladas para que possamos 
+só rodar o container e sair trabalhando.
+      </p>
+      <p>
+       O projeto que vamos conhecer é este: https://jupyter-docker-stacks.readthedocs.io
+      </p>
+      <p>
+       Vamos dar uma olhadinha nas opções rapidamente para você saber qual imagem você irá ]escolher:
+      </p>
+      <ul>
+       <li>
+        jupyter/base-notebook
+        <ul>
+         <li>
+          O mininmo necessário para rodar os notebooks, sem bibliotecas
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/minimal-notebook
+        <ul>
+         <li>
+          Tudo que tem no base, mais algumas ferramentas, como git, vim, etc.
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/r-notebook
+        <ul>
+         <li>
+          Tudo que tem no minimal, mais o ambiente do R e várias bibliotecas
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/scipy-notebook
+        <ul>
+         <li>
+          Tudo que tem no minimal, mais várias bibliotecas de ciência de dados, scipy, scikit-learn, etc.
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/tensorflow-notebook
+        <ul>
+         <li>
+          Tudo que tem no scipy mais Tensorflow e Keras
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/datascience-notebook
+        <ul>
+         <li>
+          Tudo que tem no scipy e r mais o ambiente Julia
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/pyspark-notebook
+        <ul>
+         <li>
+          Tudo que tem no scipy mais Apache Spark
+         </li>
+        </ul>
+       </li>
+       <li>
+        jupyter/all-spark-notebook
+        <ul>
+         <li>
+          Tudo que tem no pyspark mais suporte para Scala
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <p>
+       <img alt="Diagrama das imagens" src="http://interactive.blockdiag.com/image?compression=deflate&amp;encoding=base64&amp;src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA"/>
+      </p>
+      <h2>
+       Executando
+      </h2>
+      <p>
+       Bom, agora que já temos ideia de qual imagem queremos iniciar, vamos fazer o que temos
+que fazer.
+      </p>
+      <p>
+       Lembrando que, apesar das imagens terem um propósito e terem já algumas libs instaladas
+, em todas elas você consegue customizar o ambiente conforme seu desejo.
+      </p>
+      <p>
+       O notebook tem dois modos de ser executado: O classico e o lab
+      </p>
+      <ul>
+       <li>
+        o lab: é uma versão mais nova, com novos recursos e mais opções de trabalho que o classic, possibilita trabalhar com abas e mais de um notebook por vez.
+       </li>
+       <li>
+        o classic: é a versão mais antiga com menos recursos, e uma visão de 1 notebook só por vez.
+       </li>
+      </ul>
+      <p>
+       Vamos executar o lab, e para isso necessita passar um parametro: JUPYTER_ENABLE_LAB=yes
+      </p>
+      <div class="highlight">
+       <pre><span></span><code><span class="err">docker run -d --name jupyterserver -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-notebook</span>
+</code></pre>
+      </div>
+      <p>
+       Outro detalhe é que por padrão a porta do jupyter server é 8888, o que geralmente não é 
+ruim, então vamos utilizar esta porta mesmo. Mas nas configurações tem como trocar 
+isso, entre outras opções também.
+      </p>
+      <p>
+       Executando o comando acima, você será capaz de acessar o notebook pelo seu browser na
+porta 8888: http://localhost:8888
+      </p>
+      <p>
+       Mas, será necessário informar um token que é gerado pelo servidor, para poder acessá-lo.
+Para você poder ver e acessar esse token, você pode executar um comandinho para ver o 
+log do seu container e assim poder clicar no link para abrir no browser.
+      </p>
+      <div class="highlight">
+       <pre><span></span><code><span class="err">docker logs --tail=50 jupyterserver</span>
+</code></pre>
+      </div>
+      <p>
+       Mas, para facilitar e, se você está executando o servidor no seu computador e não necessita de segurança, você pode inibir os dois métodos de segurança que tem, que é o
+token e a senha, com este comando:
+      </p>
+      <div class="highlight">
+       <pre><span></span><code><span class="err">docker run -d --name jupyterserver -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-notebook start-notebook.sh --NotebookApp.password=''  --NotebookApp.token=''</span>
+</code></pre>
+      </div>
+      <p>
+       E por último, eu recomendo que você configura uma pasta local no seu computador (por 
+exemplo /home/meu-user/notebooks) para que todo seu trabalho não fique apenas dentro do 
+container e muito difícil de obter
+depois. Então, utilizamos o volume do docker para essa tarefa.
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ docker run -d <span class="se">\</span>
+    --name jupyterserver <span class="se">\</span>
+    -p <span class="m">8888</span>:8888 <span class="se">\</span>
+    -v /home/meu-user/notebooks:/home/jovyan/work <span class="se">\</span>
+    -e <span class="nv">JUPYTER_ENABLE_LAB</span><span class="o">=</span>yes <span class="se">\</span>
+    jupyter/datascience-notebook <span class="se">\</span>
+    start-notebook.sh --NotebookApp.password<span class="o">=</span><span class="s1">''</span> --NotebookApp.token<span class="o">=</span><span class="s1">''</span>
+</code></pre>
+      </div>
+      <p>
+       Assim, facilmente, acessando seu browser, sem a necessitade de senhas ou tokens, você
+terá um ótimo ambiente para executar seus treinamentos de código, apreder mais sobre
+machine learning, data-science, com Python, R ou Julia!
+      </p>
+      <h3>
+       Conclusão
+      </h3>
+      <p>
+       Facilmente você tem um ambiente muito prático e configurável para poder estudar 
+seus conteúdos e seus dados.
+      </p>
+      <p>
+       Desbrave e utilize bastante este ambiente que é muito rico
+      </p>
+      <p>
+       Bom trabalho!
+      </p>
+     </article>
+     <div class="tags">
+      <p>
+       tags:
+       <a href="https://berlotto.github.io/tag/editores.html">
+        editores
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/codigo.html">
+        codigo
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/notebook.html">
+        notebook
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/jupyter.html">
+        jupyter
+       </a>
+      </p>
+     </div>
+     <hr/>
+     <div class="comments">
+      <h2>
+       Comments !
+      </h2>
+      <div id="disqus_thread">
+      </div>
+      <script type="text/javascript">
+       var disqus_shortname = 'berlottogithubio';
+                var disqus_identifier = 'como-instalar-juoyter-notebook-no-docker.html';
+                var disqus_url = 'https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//berlottogithubio.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+      </script>
+      <noscript>
+       Please enable JavaScript to view the comments.
+      </noscript>
+     </div>
+    </div>
+   </div>
+  </div>
+  <hr/>
+  <!-- Footer -->
+  <footer>
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <ul class="list-inline text-center">
+       <li>
+        <a href="https://twitter.com/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-github fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://facebook.com/sergio.berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.linkedin.com/in/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-linkedin fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-telegram fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+      </ul>
+      <p class="copyright text-muted">
+       Blog criado com
+       <a href="http://getpelican.com">
+        Pelican
+       </a>
+       ,
+    and
+       <a href="http://python.org">
+        Python
+       </a>
+       .
+       <br/>
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        <img alt="Creative Commons License" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" style="border-width:0"/>
+       </a>
+       "
+       <span property="dct:title" xmlns:dct="http://purl.org/dc/terms/">
+        Programador Livre
+       </span>
+       " by
+       <a href="https://berlotto.github.io" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+        Sérgio Berlotto
+       </a>
+       is
+  licensed under a
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+       </a>
+       , except where indicated otherwise.
+
+    Todas imagens são do site
+       <a href="http://pixabay.com" target="_blank">
+        pixabay.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- jQuery -->
+  <script src="https://berlotto.github.io/theme/js/jquery.min.js">
+  </script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="https://berlotto.github.io/theme/js/bootstrap.min.js">
+  </script>
+  <!-- Custom Theme JavaScript -->
+  <script src="https://berlotto.github.io/theme/js/clean-blog.min.js">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P8RS2G0QCD">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P8RS2G0QCD');
+  </script>
+  <script type="text/javascript">
+   var disqus_shortname = 'berlottogithubio';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+ </body>
+</html>
