@@ -7,6 +7,7 @@ Authors: Sérgio Berlotto
 Summary: Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o instalei num notebook para analisar e poder dar uma opinião sobre o ambiente. 
 Headline: Funciona de verdade?
 Header_Cover: static/posts/windows.png
+Status: draft
 
 Eu andava há um tempo já curioso sobre o Windos 10 com WSL. Como funciona? Funciona? Então criei coragem e o 
 instalei num notebook para analisar e poder dar uma opinião sobre o ambiente. 
