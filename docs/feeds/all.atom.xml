@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-02-21T13:00:00-03:00</updated><entry><title>Como executar um ambiente Jupyter em um docker localmente</title><link href="https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html" rel="alternate"></link><published>2021-02-21T13:00:00-03:00</published><updated>2021-02-21T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-02-21:/como-instalar-juoyter-notebook-no-docker.html</id><summary type="html">&lt;p&gt;Trabalhe como um cientista de dados profissional no seu computador local facilmente!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trabalhe como um cientista de dados profissional no seu computador local facilmente!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Programador Livre</title><link href="https://berlotto.github.io/" rel="alternate"></link><link href="https://berlotto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://berlotto.github.io/</id><updated>2021-02-27T13:00:00-03:00</updated><entry><title>Executando queries e gerenciando o postgres de forma fácil</title><link href="https://berlotto.github.io/executando-queries-e-gerenciando-postgres-de-forma-facil.html" rel="alternate"></link><published>2021-02-27T13:00:00-03:00</published><updated>2021-02-27T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-02-27:/executando-queries-e-gerenciando-postgres-de-forma-facil.html</id><summary type="html">&lt;p&gt;Chega de passar trabalho e ficar catando ferramentas que possibilitem
+você tanto a gerenciar seu banco quanto a consultar os dados. Vou te mostrar
+como fazer isso de forma fácil com uma ferramenta que está muito madura e
+com desenvolvimento muito ativo pela comunidade.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Postgres PgAdmin&lt;/h1&gt;
+&lt;p&gt;Vamos então começar do início: O que é o pgAdmin ?&lt;/p&gt;
+&lt;p&gt;O pgAdmin é uma ferramenta que permite administrar completamente seu banco de dados Postgres.&lt;/p&gt;
+&lt;p&gt;Com ele conseguimos controlar tudo que um DBA necessita por exemplo: conexões, usuários e permissões,
+databases, tabelas, e tudo mais, mas, também, é possível gerenciar os dados de um banco de dados, que 
+geralmente é um trabalho que o desenvolvedor está mais preocupado. O dev pode, por exemplo, criar as conexões para o banco local, remoto de testes e ambiente de produção se tiver permissão.&lt;/p&gt;
+&lt;p&gt;Assim o desenvolvedor consegue utilizar esta interface tanto quanto um DBA.&lt;/p&gt;
+&lt;p&gt;O pgAdmin está na sua versão 4 e atualmente é web mas já foi uma ferramenta de interface gráfica na 
+sua versão 3, veja como era:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/pgadmin3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Este formato de trabalho foi migrado para uma aplicação web, o que facilitou muitas coisas para todos,
+podemos instalar apenas 1 pgadmin e gerenciar usuários e conexões centralizadamente dentro da empresa
+por exemplo, podemos subir pgAdmins locais através de docker em ambiente de desenvolvimento,
+podemos fazer várias coisas que com o antigo não daria. Além de estar muito mais bonito e com seu
+desenvolvimento muito ativo.&lt;/p&gt;
+&lt;h2&gt;Conhecendo&lt;/h2&gt;
+&lt;p&gt;Então vamos lá, vamos conhecer o atual pgAdmin 4&lt;/p&gt;
+&lt;p&gt;Esta é a tela de login:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/login.png"&gt;&lt;/p&gt;
+&lt;p&gt;E esta é a interface principal de trabalho:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/interface.png"&gt;&lt;/p&gt;
+&lt;p&gt;Dê uma olhada rapida, como fazer o login e utilizar alguns controles no pgadmin:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/BQKRupBi700" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Neste video eu mostro como criar um novo servidor para acessar, informar o host, usuário e senha,
+como acessar a área de gestão dos componentes da instância, ao lado esquerdo, como acessar a tela
+de query, e como executar um explain analyse, que é muito importante na hora queremos debugar nossa
+query.&lt;/p&gt;
+&lt;p&gt;Este banco local de exemplo ai, tem somente uma tabela bem simples inventada, mas já nos permite ver
+como o explain analyse mostra suas informações, muito completas e detalhadas e ainda conseguimos 
+configurar o que precisamos medir, como timing, custos, buffers, entre outros.&lt;/p&gt;
+&lt;h2&gt;Como executar&lt;/h2&gt;
+&lt;p&gt;Bom, como tudo hoje pode ser executado dentro de um docker, com o pgAdmin, não seria diferente.&lt;/p&gt;
+&lt;p&gt;Primeiro, lembrando que o pgAdmin 4 é opensource, e você pode dar uma espiada no código se quiser. 
+Veja na documentação sobre isso: https://www.pgadmin.org/development/resources/&lt;/p&gt;
+&lt;p&gt;Bom, o docker-compose auxilia muito quanto pretendemos iniciar containers dependentes ou até quando
+queremos documentar containers em execução.&lt;/p&gt;
+&lt;p&gt;E é ele que iremos utilizar. Neste docker-compose eu subo um banco PostgreSQL para que vocẽ possa 
+testar os comandos todos, mas se você já tem uma instancia de Postgres no ar, nao precisa subir tudo,
+daí, você pode escolher o que fazer: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ou você adiciona somente a parte do pgAdmin no seu docker-compose onde já tem o banco&lt;/li&gt;
+&lt;li&gt;ou você sobre este docker-compose mesmo para subir o pgAdmin e um banco junto&lt;/li&gt;
+&lt;li&gt;ou ainda, você pode subir somente o pgAdmin para acessar outros bancos que deseje&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;3.9&amp;quot;&lt;/span&gt;
+&lt;span class="nt"&gt;services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;postgres&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;postgres:13-alpine&lt;/span&gt;
+    &lt;span class="nt"&gt;environment&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;POSTGRES_PASSWORD=admin123&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;POSTGRES_DB=db1&lt;/span&gt;
+    &lt;span class="nt"&gt;ports&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;5432:5432&amp;quot;&lt;/span&gt;
+&lt;span class="nt"&gt;pgadmin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dpage/pgadmin4&lt;/span&gt;
+    &lt;span class="nt"&gt;environment&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PGADMIN_DEFAULT_EMAIL=admin&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PGADMIN_DEFAULT_PASSWORD=admin123&lt;/span&gt;
+    &lt;span class="nt"&gt;ports&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;8080:80&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Bom, explicando um pouco:&lt;/p&gt;
+&lt;p&gt;O serviço "postgres" é a instancia de banco, fica com o hostname "postgres" no container e isso
+é um padrão docker-compose. Definimos ali também o password do usuário padrão que é também "postgres"
+e um banco que irá ser criado também, chamdao "db1".&lt;/p&gt;
+&lt;p&gt;O serviço "pgadmin" é o que nos interessa. A imagem do pgadmin é "dpage/pgadmin4". Quando sai uma versão nova do pgadmin, 
+no meu ambiente local, eu simplesmente removo o container e a imagem, faço pull da imagem novamente e recrio o container.&lt;/p&gt;
+&lt;p&gt;Neste serviço também definimos duas variaveis de ambiente que definem um usuário administrador e senha para ele, além de
+direcionar a porta 80 de dentro do container para a porta 8080 da máquina local.&lt;/p&gt;
+&lt;p&gt;Dito isto, podemos executar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ docker-compose up
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Então agora é só acessar no seu browser http://localhost:8080 e você vera aquela tela de login que mostrei mais acima.&lt;/p&gt;
+&lt;h2&gt;Explain [analyse]&lt;/h2&gt;
+&lt;p&gt;Uma das ferramentas que mais tenho utilizado nos ultimos tempos é o Explain e o explain analyse no pgAdmin.&lt;/p&gt;
+&lt;p&gt;Estes dois comandos, no Postgres, explican como a query está sendo executada dentro do banco, eles mostram quais as escolhas
+o banco de dados fez para executar sua consulta e por que, além de mostrar também, quando solicitado, os tempos de execução e 
+todos os custos que o banco teve para retornar seu dado.&lt;/p&gt;
+&lt;p&gt;Se está conseguindo utilizar o indice esperado, quantos loops o banco fez para pegar os registros, quanto custou para o banco
+retornar aqueles dados.&lt;/p&gt;
+&lt;p&gt;Estes comandos funcionam muito bem no terminal, via psql, mas quando temos estas informações de forma visual tudo fica muito
+mais fácil.&lt;/p&gt;
+&lt;p&gt;Veja um exemplo do proprio site do pgAdmin:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/pgadmin4-explain.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;Conclusão&lt;/h2&gt;
+&lt;p&gt;Além disso, muitas outras funções do banco de dados podem ser acessadas e gerenciadas. O pgAdmin é muito completo e muito leve.
+Em um dashboard muito visual você consegue ver toda a atividade que está acontendo no seu banco de dados, em outra tela você
+consegue ver todos os resources disponíveis no banco, e também codificar suas procedures, e por ai vai.&lt;/p&gt;
+&lt;p&gt;Você, desenvolvedor, não precisa mais ficar se batendo a procura de uma boa ferramenta, usa o pgAdmin&lt;/p&gt;
+&lt;p&gt;Site oficial: &lt;a href="https://www.pgadmin.org/"&gt;https://www.pgadmin.org/&lt;/a&gt;&lt;/p&gt;</content><category term="database"></category><category term="postgres"></category><category term="bancodedados"></category><category term="dados"></category><category term="pgsql"></category></entry><entry><title>Como executar um ambiente Jupyter em um docker localmente</title><link href="https://berlotto.github.io/como-instalar-juoyter-notebook-no-docker.html" rel="alternate"></link><published>2021-02-21T13:00:00-03:00</published><updated>2021-02-21T13:00:00-03:00</updated><author><name>Sérgio Berlotto</name></author><id>tag:berlotto.github.io,2021-02-21:/como-instalar-juoyter-notebook-no-docker.html</id><summary type="html">&lt;p&gt;Trabalhe como um cientista de dados profissional no seu computador local facilmente!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trabalhe como um cientista de dados profissional no seu computador local facilmente!&lt;/p&gt;
 &lt;h1&gt;Jupyter&lt;/h1&gt;
 &lt;p&gt;Jupyter é um ambiente muito prático que roda os tais "notebooks", que nada mais são do 
 que documentos definidos por células que contém código de executável ou markdown para 

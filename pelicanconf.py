@@ -21,7 +21,7 @@ THEME = 'themes/pelican-clean-blog'
 STATIC_PATHS=['static']
 
 # - THEME CONFIGURATION
-HEADER_COVER = 'static/homecover.jpg'
+HEADER_COVER = 'static/homecover-1.jpg'
 # HEADER_COLOR = 'black'
 SHOW_SOCIAL_ON_INDEX_PAGE_HEADER=True
 CSS_OVERRIDE = 'static/custom.css'

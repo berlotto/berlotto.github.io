@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Executando queries e gerenciando o postgres de forma fácil
+  </title>
+  <link href="https://berlotto.github.io/feeds/all.atom.xml" rel="alternate" title="Programador Livre Full Atom Feed" type="application/atom+xml"/>
+  <link href="https://berlotto.github.io/feeds/{slug}.atom.xml" rel="alternate" title="Programador Livre Categories Atom Feed" type="application/atom+xml"/>
+  <!-- Bootstrap Core CSS -->
+  <link href="https://berlotto.github.io/theme/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="https://berlotto.github.io/theme/css/clean-blog.min.css" rel="stylesheet"/>
+  <!-- Code highlight color scheme -->
+  <link href="https://berlotto.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet"/>
+  <!-- CSS specified by the user -->
+  <link href="https://berlotto.github.io/static/custom.css" rel="stylesheet"/>
+  <!-- Custom Fonts -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  <meta content="PgAadmin - a velha ferramenta, com nova cara" name="description"/>
+  <meta content="Sérgio Berlotto" name="author"/>
+  <meta content="postgres" name="tags"/>
+  <meta content="bancodedados" name="tags"/>
+  <meta content="dados" name="tags"/>
+  <meta content="pgsql" name="tags"/>
+  <meta content="" property="og:locale"/>
+  <meta content="Programador Livre" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="https://berlotto.github.io/author/sergio-berlotto.html" property="article:author"/>
+  <meta content="https://berlotto.github.io/executando-queries-e-gerenciando-postgres-de-forma-facil.html" property="og:url"/>
+  <meta content="Executando queries e gerenciando o postgres de forma fácil" property="og:title"/>
+  <meta content="2021-02-27 13:00:00-03:00" property="article:published_time"/>
+  <meta content="PgAadmin - a velha ferramenta, com nova cara" property="og:description"/>
+  <meta content="https://berlotto.github.io/static/posts/pgadmin.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@sergioberlotto" name="twitter:site"/>
+  <meta content="Executando queries e gerenciando o postgres de forma fácil" name="twitter:title"/>
+  <meta content="https://berlotto.github.io/static/posts/pgadmin.jpg" name="twitter:image"/>
+  <meta content="PgAadmin - a velha ferramenta, com nova cara" name="twitter:description"/>
+  <link href="https://berlotto.github.io/executando-queries-e-gerenciando-postgres-de-forma-facil.html" rel="canonical"/>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Programador Livre", "item": "https://berlotto.github.io"}, {"@type": "ListItem", "position": 2, "name": "Executando queries e gerenciando postgres de forma facil", "item": "https://berlotto.github.io/executando-queries-e-gerenciando-postgres-de-forma-facil.html"}]}
+  </script>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Sérgio Berlotto"}, "publisher": {"@type": "Organization", "name": "Programador Livre"}, "headline": "Executando queries e gerenciando o postgres de forma fácil", "about": "database", "datePublished": "2021-02-27 13:00"}
+  </script>
+ </head>
+ <body class="article-executando-queries-e-gerenciando-postgres-de-forma-facil">
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+     <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+      <span class="sr-only">
+       Toggle navigation
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+      <span class="icon-bar">
+      </span>
+     </button>
+     <a class="navbar-brand" href="https://berlotto.github.io/">
+      Programador Livre
+     </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <li>
+       <a href="https://berlotto.github.io/pages/sobre.html">
+        Quem sou eu
+       </a>
+      </li>
+      <li>
+       <a href="https://github.com/berlotto" target="_blank">
+        Author profile
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container -->
+  </nav>
+  <!-- Page Header -->
+  <header class="intro-header" style="background-image: url('https://berlotto.github.io/static/posts/pgadmin.jpg')">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-heading">
+       <h1>
+        Executando queries e gerenciando o postgres de forma fácil
+       </h1>
+       <h3 class="subheading">
+        PgAadmin - a velha ferramenta, com nova cara
+       </h3>
+       <span class="meta">
+        Criado sáb 27 fevereiro 2021 por
+        <a href="https://berlotto.github.io/author/sergio-berlotto.html">
+         Sérgio Berlotto
+        </a>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+     <!-- Post Content -->
+     <article>
+      <h1>
+       Postgres PgAdmin
+      </h1>
+      <p>
+       Vamos então começar do início: O que é o pgAdmin ?
+      </p>
+      <p>
+       O pgAdmin é uma ferramenta que permite administrar completamente seu banco de dados Postgres.
+      </p>
+      <p>
+       Com ele conseguimos controlar tudo que um DBA necessita por exemplo: conexões, usuários e permissões,
+databases, tabelas, e tudo mais, mas, também, é possível gerenciar os dados de um banco de dados, que 
+geralmente é um trabalho que o desenvolvedor está mais preocupado. O dev pode, por exemplo, criar as conexões para o banco local, remoto de testes e ambiente de produção se tiver permissão.
+      </p>
+      <p>
+       Assim o desenvolvedor consegue utilizar esta interface tanto quanto um DBA.
+      </p>
+      <p>
+       O pgAdmin está na sua versão 4 e atualmente é web mas já foi uma ferramenta de interface gráfica na 
+sua versão 3, veja como era:
+      </p>
+      <p>
+       <img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/pgadmin3.jpg"/>
+      </p>
+      <p>
+       Este formato de trabalho foi migrado para uma aplicação web, o que facilitou muitas coisas para todos,
+podemos instalar apenas 1 pgadmin e gerenciar usuários e conexões centralizadamente dentro da empresa
+por exemplo, podemos subir pgAdmins locais através de docker em ambiente de desenvolvimento,
+podemos fazer várias coisas que com o antigo não daria. Além de estar muito mais bonito e com seu
+desenvolvimento muito ativo.
+      </p>
+      <h2>
+       Conhecendo
+      </h2>
+      <p>
+       Então vamos lá, vamos conhecer o atual pgAdmin 4
+      </p>
+      <p>
+       Esta é a tela de login:
+      </p>
+      <p>
+       <img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/login.png"/>
+      </p>
+      <p>
+       E esta é a interface principal de trabalho:
+      </p>
+      <p>
+       <img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/interface.png"/>
+      </p>
+      <p>
+       Dê uma olhada rapida, como fazer o login e utilizar alguns controles no pgadmin:
+      </p>
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/BQKRupBi700" width="560">
+      </iframe>
+      <p>
+       Neste video eu mostro como criar um novo servidor para acessar, informar o host, usuário e senha,
+como acessar a área de gestão dos componentes da instância, ao lado esquerdo, como acessar a tela
+de query, e como executar um explain analyse, que é muito importante na hora queremos debugar nossa
+query.
+      </p>
+      <p>
+       Este banco local de exemplo ai, tem somente uma tabela bem simples inventada, mas já nos permite ver
+como o explain analyse mostra suas informações, muito completas e detalhadas e ainda conseguimos 
+configurar o que precisamos medir, como timing, custos, buffers, entre outros.
+      </p>
+      <h2>
+       Como executar
+      </h2>
+      <p>
+       Bom, como tudo hoje pode ser executado dentro de um docker, com o pgAdmin, não seria diferente.
+      </p>
+      <p>
+       Primeiro, lembrando que o pgAdmin 4 é opensource, e você pode dar uma espiada no código se quiser. 
+Veja na documentação sobre isso: https://www.pgadmin.org/development/resources/
+      </p>
+      <p>
+       Bom, o docker-compose auxilia muito quanto pretendemos iniciar containers dependentes ou até quando
+queremos documentar containers em execução.
+      </p>
+      <p>
+       E é ele que iremos utilizar. Neste docker-compose eu subo um banco PostgreSQL para que vocẽ possa 
+testar os comandos todos, mas se você já tem uma instancia de Postgres no ar, nao precisa subir tudo,
+daí, você pode escolher o que fazer:
+      </p>
+      <ul>
+       <li>
+        ou você adiciona somente a parte do pgAdmin no seu docker-compose onde já tem o banco
+       </li>
+       <li>
+        ou você sobre este docker-compose mesmo para subir o pgAdmin e um banco junto
+       </li>
+       <li>
+        ou ainda, você pode subir somente o pgAdmin para acessar outros bancos que deseje
+       </li>
+      </ul>
+      <div class="highlight">
+       <pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="s">"3.9"</span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="nt">postgres</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">postgres:13-alpine</span>
+    <span class="nt">environment</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD=admin123</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB=db1</span>
+    <span class="nt">ports</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">"5432:5432"</span>
+<span class="nt">pgadmin</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dpage/pgadmin4</span>
+    <span class="nt">environment</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PGADMIN_DEFAULT_EMAIL=admin</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PGADMIN_DEFAULT_PASSWORD=admin123</span>
+    <span class="nt">ports</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">"8080:80"</span>
+</code></pre>
+      </div>
+      <p>
+       Bom, explicando um pouco:
+      </p>
+      <p>
+       O serviço "postgres" é a instancia de banco, fica com o hostname "postgres" no container e isso
+é um padrão docker-compose. Definimos ali também o password do usuário padrão que é também "postgres"
+e um banco que irá ser criado também, chamdao "db1".
+      </p>
+      <p>
+       O serviço "pgadmin" é o que nos interessa. A imagem do pgadmin é "dpage/pgadmin4". Quando sai uma versão nova do pgadmin, 
+no meu ambiente local, eu simplesmente removo o container e a imagem, faço pull da imagem novamente e recrio o container.
+      </p>
+      <p>
+       Neste serviço também definimos duas variaveis de ambiente que definem um usuário administrador e senha para ele, além de
+direcionar a porta 80 de dentro do container para a porta 8080 da máquina local.
+      </p>
+      <p>
+       Dito isto, podemos executar:
+      </p>
+      <div class="highlight">
+       <pre><span></span><code>$ docker-compose up
+</code></pre>
+      </div>
+      <p>
+       Então agora é só acessar no seu browser http://localhost:8080 e você vera aquela tela de login que mostrei mais acima.
+      </p>
+      <h2>
+       Explain [analyse]
+      </h2>
+      <p>
+       Uma das ferramentas que mais tenho utilizado nos ultimos tempos é o Explain e o explain analyse no pgAdmin.
+      </p>
+      <p>
+       Estes dois comandos, no Postgres, explican como a query está sendo executada dentro do banco, eles mostram quais as escolhas
+o banco de dados fez para executar sua consulta e por que, além de mostrar também, quando solicitado, os tempos de execução e 
+todos os custos que o banco teve para retornar seu dado.
+      </p>
+      <p>
+       Se está conseguindo utilizar o indice esperado, quantos loops o banco fez para pegar os registros, quanto custou para o banco
+retornar aqueles dados.
+      </p>
+      <p>
+       Estes comandos funcionam muito bem no terminal, via psql, mas quando temos estas informações de forma visual tudo fica muito
+mais fácil.
+      </p>
+      <p>
+       Veja um exemplo do proprio site do pgAdmin:
+      </p>
+      <p>
+       <img alt="antigo pgAdmin 3" src="/static/posts/pgadmin/pgadmin4-explain.jpg"/>
+      </p>
+      <h2>
+       Conclusão
+      </h2>
+      <p>
+       Além disso, muitas outras funções do banco de dados podem ser acessadas e gerenciadas. O pgAdmin é muito completo e muito leve.
+Em um dashboard muito visual você consegue ver toda a atividade que está acontendo no seu banco de dados, em outra tela você
+consegue ver todos os resources disponíveis no banco, e também codificar suas procedures, e por ai vai.
+      </p>
+      <p>
+       Você, desenvolvedor, não precisa mais ficar se batendo a procura de uma boa ferramenta, usa o pgAdmin
+      </p>
+      <p>
+       Site oficial:
+       <a href="https://www.pgadmin.org/">
+        https://www.pgadmin.org/
+       </a>
+      </p>
+     </article>
+     <div class="tags">
+      <p>
+       tags:
+       <a href="https://berlotto.github.io/tag/postgres.html">
+        postgres
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/bancodedados.html">
+        bancodedados
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/dados.html">
+        dados
+       </a>
+       ,
+       <a href="https://berlotto.github.io/tag/pgsql.html">
+        pgsql
+       </a>
+      </p>
+     </div>
+     <hr/>
+     <div class="comments">
+      <h2>
+       Comments !
+      </h2>
+      <div id="disqus_thread">
+      </div>
+      <script type="text/javascript">
+       var disqus_shortname = 'berlottogithubio';
+                var disqus_identifier = 'executando-queries-e-gerenciando-postgres-de-forma-facil.html';
+                var disqus_url = 'https://berlotto.github.io/executando-queries-e-gerenciando-postgres-de-forma-facil.html';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//berlottogithubio.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+      </script>
+      <noscript>
+       Please enable JavaScript to view the comments.
+      </noscript>
+     </div>
+    </div>
+   </div>
+  </div>
+  <hr/>
+  <!-- Footer -->
+  <footer>
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <ul class="list-inline text-center">
+       <li>
+        <a href="https://twitter.com/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-github fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://facebook.com/sergio.berlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.linkedin.com/in/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-linkedin fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/sergioberlotto">
+         <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x">
+          </i>
+          <i class="fa fa-telegram fa-stack-1x fa-inverse">
+          </i>
+         </span>
+        </a>
+       </li>
+      </ul>
+      <p class="copyright text-muted">
+       Blog criado com
+       <a href="http://getpelican.com">
+        Pelican
+       </a>
+       ,
+    and
+       <a href="http://python.org">
+        Python
+       </a>
+       .
+       <br/>
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        <img alt="Creative Commons License" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" style="border-width:0"/>
+       </a>
+       "
+       <span property="dct:title" xmlns:dct="http://purl.org/dc/terms/">
+        Programador Livre
+       </span>
+       " by
+       <a href="https://berlotto.github.io" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+        Sérgio Berlotto
+       </a>
+       is
+  licensed under a
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+       </a>
+       , except where indicated otherwise.
+
+    Todas imagens são do site
+       <a href="http://pixabay.com" target="_blank">
+        pixabay.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- jQuery -->
+  <script src="https://berlotto.github.io/theme/js/jquery.min.js">
+  </script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="https://berlotto.github.io/theme/js/bootstrap.min.js">
+  </script>
+  <!-- Custom Theme JavaScript -->
+  <script src="https://berlotto.github.io/theme/js/clean-blog.min.js">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P8RS2G0QCD">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P8RS2G0QCD');
+  </script>
+  <script type="text/javascript">
+   var disqus_shortname = 'berlottogithubio';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+ </body>
+</html>
