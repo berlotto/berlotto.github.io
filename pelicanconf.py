@@ -16,9 +16,13 @@ CC_LICENSE_DERIVATIVES = "yes"
 CC_LICENSE_COMMERCIAL = "yes"
 CC_ATTR_MARKUP = True
 
+FAVICON = 'static/favicon.ico'
+
 # https://github.com/gilsondev/pelican-clean-blog
 THEME = 'themes/pelican-clean-blog'
-STATIC_PATHS=['static']
+STATIC_PATHS=[
+    'static',
+]
 
 # - THEME CONFIGURATION
 HEADER_COVER = 'static/homecover-1.jpg'
