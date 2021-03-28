@@ -6,7 +6,7 @@ Slug: pyenv-gerenciador-de-versoes
 Authors: Sérgio Berlotto
 Summary: Como conseguimos controlar nosso ambiente de desenvolvimento de forma profissional com o Pipenv.
 Headline: Mas eu preciso mesmo de mais versões do Python ?
-<!-- Header_Cover: static/posts/environmental.jpg -->
+Status: Draft
 
 Quem trabalha com Python sabe o quanto temos disponíveis diferentes tipos e versões de bibliotecas. 
 E os ambientes virtuais vieram para nos ajudar a trabalhar com várias delas ao mesmo tempo. Mas, com eles
