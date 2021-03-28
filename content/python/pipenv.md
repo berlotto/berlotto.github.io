@@ -12,7 +12,7 @@ Quem trabalha com Python sabe o quanto temos disponíveis diferentes tipos e ver
 E os ambientes virtuais vieram para nos ajudar a trabalhar com várias delas ao mesmo tempo. Mas, com eles
 vieram também alguns trampos a mais ... hehe
 
-Enntão vamos aprender a utilizar uma ferramenta que gerencia tudo pra nós!
+Então vamos aprender a utilizar uma ferramenta que gerencia tudo pra nós!
 
 # Pipenv
 

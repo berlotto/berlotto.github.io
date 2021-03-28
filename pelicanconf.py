@@ -1,65 +1,92 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+from datetime import datetime
 
-AUTHOR = 'Sérgio Berlotto'
+AUTHOR = "Alexandre Vicenzi"
+SITEURL = "http://localhost:8000"
 SITENAME = 'Programador Livre'
-SITEURL = 'localhost:8000'
+SITETITLE = 'Programador Livre'
+SITESUBTITLE = "Informações para programadores"
 
-PATH = 'content'
+SITEDESCRIPTION = "Flex - The minimalist Pelican theme."
 
+SITELOGO = '/static/logo.png'
+FAVICON = 'static/favicon.ico'
+BROWSER_COLOR = "#333333"
+
+PYGMENTS_STYLE = "monokai"
+
+ROBOTS = "index, follow"
+
+THEME = '/home/sergio/Desenvolvimento/pelican-themes/Flex'
+PATH = "content"
+OUTPUT_PATH = "blog/"
 TIMEZONE = 'America/Sao_Paulo'
 
+DISABLE_URL_HASH = True
+
+PLUGIN_PATHS = ['/home/sergio/Desenvolvimento/pelican-plugins']
+
+SEO_REPORT = True 
+SEO_ENHANCER = True
+SEO_ENHANCER_OPEN_GRAPH = True
+
+PLUGINS = ['i18n_subsites','post_stats', 'neighbors', 'related_posts']
+
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+
+I18N_TEMPLATES_LANG = "pt"
 DEFAULT_LANG = 'pt_BR'
+OG_LOCALE = "pt_BR"
+LOCALE = "pt_BR.utf8"
 
-CC_LICENSE='CC-BY-SA'
-CC_LICENSE_DERIVATIVES = "yes"
-CC_LICENSE_COMMERCIAL = "yes"
-CC_ATTR_MARKUP = True
+DATE_FORMATS = {
+    "pt": "%B %d, %Y",
+}
 
-FAVICON = 'static/favicon.ico'
+GOOGLE_GLOBAL_SITE_TAG="G-P8RS2G0QCD"
+GOOGLE_GTAG="G-P8RS2G0QCD"
 
-# https://github.com/gilsondev/pelican-clean-blog
-THEME = 'themes/pelican-clean-blog'
-STATIC_PATHS=[
-    'static',
-]
-
-# - THEME CONFIGURATION
-HEADER_COVER = 'static/homecover-1.jpg'
-# HEADER_COLOR = 'black'
-SHOW_SOCIAL_ON_INDEX_PAGE_HEADER=True
-CSS_OVERRIDE = 'static/custom.css'
-# - THEME CONFIGURATION
-
-
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (
-    ('Author profile', 'https://github.com/berlotto'),
+USE_FOLDER_AS_CATEGORY = False
+MAIN_MENU = True
+HOME_HIDE_TAGS = True
+
+SOCIAL = (
+    ('twitter', 'https://twitter.com/sergioberlotto'),
+    ('github', 'https://github.com/berlotto'),
+    ('facebook','https://facebook.com/sergio.berlotto'),
+    ('linkedin','https://www.linkedin.com/in/sergioberlotto'),
+    ('telegram','https://t.me/sergioberlotto'),
 )
 
-# Social widget
-SOCIAL = (('twitter', 'https://twitter.com/sergioberlotto'),
-          ('github', 'https://github.com/berlotto'),
-          ('facebook','https://facebook.com/sergio.berlotto'),
-          ('linkedin','https://www.linkedin.com/in/sergioberlotto'),
-          ('telegram','https://t.me/sergioberlotto'))
+MENUITEMS = (
+    ("Archives", "/archives.html"),
+    ("Categories", "/categories.html"),
+    ("Tags", "/tags.html"),
+)
 
-DEFAULT_PAGINATION = False
-DISPLAY_PAGES_ON_MENU = True
-DISPLAY_CATEGORIES_ON_MENU = False
+CC_LICENSE = {
+    "name": "Creative Commons Attribution-ShareAlike 4.0 International License",
+    "version": "4.0",
+    "slug": "by-sa",
+    "icon": True,
+    "language": "en_US",
+}
 
-# Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
-OUTPUT_PATH = 'docs/'
+COPYRIGHT_YEAR = datetime.now().year
+DEFAULT_PAGINATION = 10
 
-# https://github.com/pelican-plugins/seo
-SEO_REPORT = True 
-SEO_ENHANCER = True
-SEO_ENHANCER_OPEN_GRAPH = True
+DISQUS_SITENAME = "berlottogithubio"
+
+STATIC_PATHS=[
+    'static',
+]
+
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
+THEME_COLOR_ENABLE_USER_OVERRIDE = True
+
+USE_LESS = True
